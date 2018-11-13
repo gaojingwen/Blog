@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>前端开发常用代码片段 | 小三胖技术栈</title>
+    <meta name="description" content="佛系前端大神">
+    <meta charset="UTF-8">
+  <link rel="icon" href="/Blog/favicon.ico">
+    
+    <link rel="preload" href="/Blog/assets/css/0.styles.9ba1bd5b.css" as="style"><link rel="preload" href="/Blog/assets/js/app.b624378b.js" as="script"><link rel="preload" href="/Blog/assets/js/27.fc3fad79.js" as="script"><link rel="prefetch" href="/Blog/assets/js/25.812a025f.js"><link rel="prefetch" href="/Blog/assets/js/2.6f79cb1b.js"><link rel="prefetch" href="/Blog/assets/js/3.d16a0c2c.js"><link rel="prefetch" href="/Blog/assets/js/4.981975ce.js"><link rel="prefetch" href="/Blog/assets/js/5.22251c73.js"><link rel="prefetch" href="/Blog/assets/js/6.628e770d.js"><link rel="prefetch" href="/Blog/assets/js/7.07e2b6b4.js"><link rel="prefetch" href="/Blog/assets/js/8.2bccae8e.js"><link rel="prefetch" href="/Blog/assets/js/9.5fab895e.js"><link rel="prefetch" href="/Blog/assets/js/10.322ce4df.js"><link rel="prefetch" href="/Blog/assets/js/11.006e4719.js"><link rel="prefetch" href="/Blog/assets/js/12.3333e057.js"><link rel="prefetch" href="/Blog/assets/js/13.1af90041.js"><link rel="prefetch" href="/Blog/assets/js/14.182c46a3.js"><link rel="prefetch" href="/Blog/assets/js/15.1cbbb4a1.js"><link rel="prefetch" href="/Blog/assets/js/16.49b9f0b6.js"><link rel="prefetch" href="/Blog/assets/js/17.29b175e7.js"><link rel="prefetch" href="/Blog/assets/js/18.297427c5.js"><link rel="prefetch" href="/Blog/assets/js/19.2663f562.js"><link rel="prefetch" href="/Blog/assets/js/20.b7420290.js"><link rel="prefetch" href="/Blog/assets/js/21.d39c8908.js"><link rel="prefetch" href="/Blog/assets/js/22.f1126d66.js"><link rel="prefetch" href="/Blog/assets/js/23.4a7a29be.js"><link rel="prefetch" href="/Blog/assets/js/24.e6bca216.js"><link rel="prefetch" href="/Blog/assets/js/26.9960f054.js"><link rel="prefetch" href="/Blog/assets/js/28.cd83fc3d.js"><link rel="prefetch" href="/Blog/assets/js/29.443e4941.js"><link rel="prefetch" href="/Blog/assets/js/30.6a8a17b9.js"><link rel="prefetch" href="/Blog/assets/js/31.8fc47db9.js"><link rel="prefetch" href="/Blog/assets/js/32.b715a23d.js"><link rel="prefetch" href="/Blog/assets/js/33.518efbd0.js"><link rel="prefetch" href="/Blog/assets/js/34.76e7b1b1.js"><link rel="prefetch" href="/Blog/assets/js/35.f8a6b00b.js"><link rel="prefetch" href="/Blog/assets/js/36.8c12af51.js"><link rel="prefetch" href="/Blog/assets/js/37.cda5ca1d.js"><link rel="prefetch" href="/Blog/assets/js/38.60935ef0.js"><link rel="prefetch" href="/Blog/assets/js/39.26c637dd.js"><link rel="prefetch" href="/Blog/assets/js/40.44a0bfa7.js"><link rel="prefetch" href="/Blog/assets/js/41.259d1527.js"><link rel="prefetch" href="/Blog/assets/js/42.ab80d836.js"><link rel="prefetch" href="/Blog/assets/js/43.0af190a7.js"><link rel="prefetch" href="/Blog/assets/js/44.093f7743.js"><link rel="prefetch" href="/Blog/assets/js/45.8c17580f.js"><link rel="prefetch" href="/Blog/assets/js/46.fd30eace.js"><link rel="prefetch" href="/Blog/assets/js/47.214dd0f8.js"><link rel="prefetch" href="/Blog/assets/js/48.d43dc2ae.js"><link rel="prefetch" href="/Blog/assets/js/49.6136b23c.js"><link rel="prefetch" href="/Blog/assets/js/50.fd4e81e2.js"><link rel="prefetch" href="/Blog/assets/js/51.9fa346c5.js"><link rel="prefetch" href="/Blog/assets/js/52.6e5d9385.js"><link rel="prefetch" href="/Blog/assets/js/53.19db09c4.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.9ba1bd5b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">小三胖技术栈</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/recondRESUME/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/Blog/recondCSS/" class="nav-link">Css</a></div><div class="nav-item"><a href="/Blog/recondJAVASCRIPT/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/Blog/recondVUE/" class="nav-link">Vue</a></div><div class="nav-item"><a href="/Blog/recondNODE/" class="nav-link">Node</a></div><div class="nav-item"><a href="/Blog/recondES6/" class="nav-link">Es6</a></div><div class="nav-item"><a href="/Blog/recondPROJECT/" class="nav-link">projectify</a></div><div class="nav-item"><a href="/Blog/recondSUMMARY/" class="nav-link">summary</a></div><div class="nav-item"><a href="/Blog/recondFEATURE/" class="nav-link">feature</a></div><div class="nav-item"><a href="/Blog/recondGIT/" class="nav-link">git</a></div><div class="nav-item"><a href="/Blog/recondOTHER/" class="nav-link">other</a></div><div class="nav-item"><a href="https://github.com/gaojingwen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/recondRESUME/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/Blog/recondCSS/" class="nav-link">Css</a></div><div class="nav-item"><a href="/Blog/recondJAVASCRIPT/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/Blog/recondVUE/" class="nav-link">Vue</a></div><div class="nav-item"><a href="/Blog/recondNODE/" class="nav-link">Node</a></div><div class="nav-item"><a href="/Blog/recondES6/" class="nav-link">Es6</a></div><div class="nav-item"><a href="/Blog/recondPROJECT/" class="nav-link">projectify</a></div><div class="nav-item"><a href="/Blog/recondSUMMARY/" class="nav-link">summary</a></div><div class="nav-item"><a href="/Blog/recondFEATURE/" class="nav-link">feature</a></div><div class="nav-item"><a href="/Blog/recondGIT/" class="nav-link">git</a></div><div class="nav-item"><a href="/Blog/recondOTHER/" class="nav-link">other</a></div><div class="nav-item"><a href="https://github.com/gaojingwen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Javascript</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/Blog/recondJAVASCRIPT/" class="sidebar-link">大笨蛋</a></li><li><a href="/Blog/recondJAVASCRIPT/7分钟理解JS的节流、防抖及使用场景.html" class="sidebar-link">7分钟理解JS的节流、防抖及使用场景</a></li><li><a href="/Blog/recondJAVASCRIPT/FormData 对象的使用.html" class="sidebar-link">FormData 对象的使用</a></li><li><a href="/Blog/recondJAVASCRIPT/JavaScript 运行原理解析.html" class="sidebar-link">JavaScript 运行原理解析</a></li><li><a href="/Blog/recondJAVASCRIPT/js--API.html" class="sidebar-link">js--API</a></li><li><a href="/Blog/recondJAVASCRIPT/JS数组循环的性能和效率分析（for、while、forEach、map、for of）.html" class="sidebar-link">JS数组循环的性能和效率分析（for、while、forEach、map、for of）</a></li><li><a href="/Blog/recondJAVASCRIPT/分享前端开发常用代码片段.html" class="sidebar-link">分享前端开发常用代码片段</a></li><li><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html" class="active sidebar-link">前端开发常用代码片段</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#一、预加载图像" class="sidebar-link">一、预加载图像</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二、检查图像是否加载" class="sidebar-link">二、检查图像是否加载</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#三、自动修复破坏的图像" class="sidebar-link">三、自动修复破坏的图像</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#四、悬停切换" class="sidebar-link">四、悬停切换</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#五、淡入淡出-显示隐藏" class="sidebar-link">五、淡入淡出/显示隐藏</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#六、鼠标滚轮" class="sidebar-link">六、鼠标滚轮</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#七、鼠标坐标" class="sidebar-link">七、鼠标坐标</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#_1、javascript实现" class="sidebar-link">1、JavaScript实现</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#_2、jquery实现" class="sidebar-link">2、jQuery实现</a></li></ul></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#八、禁止移动端浏览器页面滚动" class="sidebar-link">八、禁止移动端浏览器页面滚动</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#_1、html实现" class="sidebar-link">1、HTML实现</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#、javascript实现" class="sidebar-link">、JavaScript实现</a></li></ul></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#九、阻止默认行为" class="sidebar-link">九、阻止默认行为</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十、阻止冒泡" class="sidebar-link">十、阻止冒泡</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十一、检测浏览器是否支持svg" class="sidebar-link">十一、检测浏览器是否支持svg</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十二、检测浏览器是否支持canvas" class="sidebar-link">十二、检测浏览器是否支持canvas</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十三、检测是否是微信浏览器" class="sidebar-link">十三、检测是否是微信浏览器</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十四、检测是否移动端及浏览器内核" class="sidebar-link">十四、检测是否移动端及浏览器内核</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十五、检测是否电脑端-移动端" class="sidebar-link">十五、检测是否电脑端/移动端</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十六、检测浏览器内核" class="sidebar-link">十六、检测浏览器内核</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十七、强制移动端页面横屏显示" class="sidebar-link">十七、强制移动端页面横屏显示</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十八、电脑端页面全屏显示" class="sidebar-link">十八、电脑端页面全屏显示</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#十九、获得-失去焦点" class="sidebar-link">十九、获得/失去焦点</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#_1、javascript实现-2" class="sidebar-link">1、JavaScript实现</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#_2、jquery实现-2" class="sidebar-link">2、jQuery实现</a></li></ul></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十、获取上传文件大小" class="sidebar-link">二十、获取上传文件大小</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十一、限制上传文件类型" class="sidebar-link">二十一、限制上传文件类型</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#_1、高版本浏览器" class="sidebar-link">1、高版本浏览器</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#_2、限制图片" class="sidebar-link">2、限制图片</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#_3、低版本浏览器" class="sidebar-link">3、低版本浏览器</a></li></ul></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十二、正则表达式" class="sidebar-link">二十二、正则表达式</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十三、限制字符数" class="sidebar-link">二十三、限制字符数</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十四、验证码倒计时" class="sidebar-link">二十四、验证码倒计时</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十五、时间倒计时" class="sidebar-link">二十五、时间倒计时</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十六、倒计时跳转" class="sidebar-link">二十六、倒计时跳转</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十七、时间戳、毫秒格式化" class="sidebar-link">二十七、时间戳、毫秒格式化</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十八、当前日期" class="sidebar-link">二十八、当前日期</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#二十九、判断周六-周日" class="sidebar-link">二十九、判断周六/周日</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#三十、ajax调用错误处理" class="sidebar-link">三十、AJAX调用错误处理</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html#三十一、链式插件调用" class="sidebar-link">三十一、链式插件调用</a></li></ul></li><li><a href="/Blog/recondJAVASCRIPT/深入深入再深入 js 深拷贝对象.html" class="sidebar-link">深入深入再深入 js 深拷贝对象</a></li><li><a href="/Blog/recondJAVASCRIPT/请你实现一个深克隆.html" class="sidebar-link">面试官:请你实现一个深克隆</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="前端开发常用代码片段"><a href="#前端开发常用代码片段" aria-hidden="true" class="header-anchor">#</a> 前端开发常用代码片段</h1> <h2 id="一、预加载图像"><a href="#一、预加载图像" aria-hidden="true" class="header-anchor">#</a> 一、预加载图像</h2> <p>如果你的网页中需要使用大量初始不可见的（例如，悬停的）图像，那么可以预加载这些图像。</p> <p><img src="https://segmentfault.com/img/bV9GOl?w=630&h=179/view" alt="img"></p> <h2 id="二、检查图像是否加载"><a href="#二、检查图像是否加载" aria-hidden="true" class="header-anchor">#</a> 二、检查图像是否加载</h2> <p>有时为了继续脚本，你可能需要检查图像是否全部加载完毕。</p> <p><img src="https://segmentfault.com/img/bV9GOp?w=461&h=77/view" alt="img"></p> <p>你也可以使用 ID 或 CLASS 替换 <img>标签来检查某个特定的图像是否被加载。</p> <h2 id="三、自动修复破坏的图像"><a href="#三、自动修复破坏的图像" aria-hidden="true" class="header-anchor">#</a> 三、自动修复破坏的图像</h2> <p>逐个替换已经破坏的图像链接是非常痛苦的。不过，下面这段简单的代码可以帮助你。</p> <p><img src="https://segmentfault.com/img/bV9GOJ?w=787&h=127/view" alt="img"></p> <h2 id="四、悬停切换"><a href="#四、悬停切换" aria-hidden="true" class="header-anchor">#</a> 四、悬停切换</h2> <p>当用户鼠标悬停在可点击的元素上时，可添加类到元素中，反之则移除类。</p> <p><img src="https://segmentfault.com/img/bV9LXp?w=370&h=129/view" alt="img"></p> <p>只需要添加必要的 CSS 即可。更简单的方法是使用 <strong>toggleClass()</strong> 方法。</p> <p><img src="https://segmentfault.com/img/bV9MaN?w=367&h=78/view" alt="img"></p> <h2 id="五、淡入淡出-显示隐藏"><a href="#五、淡入淡出-显示隐藏" aria-hidden="true" class="header-anchor">#</a> 五、淡入淡出/显示隐藏</h2> <p><img src="https://segmentfault.com/img/bV9M2B?w=380&h=201" alt="淡入淡出/显示隐藏"></p> <h2 id="六、鼠标滚轮"><a href="#六、鼠标滚轮" aria-hidden="true" class="header-anchor">#</a> 六、鼠标滚轮</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>$('#content').on(&quot;mousewheel DOMMouseScroll&quot;, function (event) { 
+    // chrome &amp; ie || // firefox
+    var delta = (event.originalEvent.wheelDelta &amp;&amp; (event.originalEvent.wheelDelta &gt; 0 ? 1 : -1)) || 
+        (event.originalEvent.detail &amp;&amp; (event.originalEvent.detail &gt; 0 ? -1 : 1));  
+    
+    if (delta &gt; 0) { 
+        console.log('mousewheel top');
+    } else if (delta &lt; 0) {
+        console.log('mousewheel bottom');
+    } 
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="七、鼠标坐标"><a href="#七、鼠标坐标" aria-hidden="true" class="header-anchor">#</a> 七、鼠标坐标</h2> <h3 id="_1、javascript实现"><a href="#_1、javascript实现" aria-hidden="true" class="header-anchor">#</a> 1、JavaScript实现</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>X:&lt;input id=&quot;xxx&quot; type=&quot;text&quot; /&gt; Y:&lt;input id=&quot;yyy&quot; type=&quot;text&quot; /&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>function mousePosition(ev){
+    if(ev.pageX || ev.pageY){
+        return {x:ev.pageX, y:ev.pageY};
+    }
+    return {
+        x:ev.clientX + document.body.scrollLeft - document.body.clientLeft,
+        y:ev.clientY + document.body.scrollTop - document.body.clientTop
+    };
+}
+
+function mouseMove(ev){
+    ev = ev || window.event;
+    
+    var mousePos = mousePosition(ev);
+    
+    document.getElementById('xxx').value = mousePos.x;
+    document.getElementById('yyy').value = mousePos.y;
+}
+document.onmousemove = mouseMove;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h3 id="_2、jquery实现"><a href="#_2、jquery实现" aria-hidden="true" class="header-anchor">#</a> 2、jQuery实现</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>$('#ele').click(function(event){
+    //获取鼠标在图片上的坐标 
+    console.log('X：' + event.offsetX+'\n Y:' + event.offsetY); 
+    
+    //获取元素相对于页面的坐标 
+    console.log('X：'+$(this).offset().left+'\n Y:'+$(this).offset().top);
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><h2 id="八、禁止移动端浏览器页面滚动"><a href="#八、禁止移动端浏览器页面滚动" aria-hidden="true" class="header-anchor">#</a> 八、禁止移动端浏览器页面滚动</h2> <h3 id="_1、html实现"><a href="#_1、html实现" aria-hidden="true" class="header-anchor">#</a> 1、HTML实现</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;body ontouchmove=&quot;event.preventDefault()&quot; &gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="、javascript实现"><a href="#、javascript实现" aria-hidden="true" class="header-anchor">#</a> 、JavaScript实现</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>document.addEventListener('touchmove', function(event) {
+    event.preventDefault();
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><h2 id="九、阻止默认行为"><a href="#九、阻止默认行为" aria-hidden="true" class="header-anchor">#</a> 九、阻止默认行为</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>// JavaScript
+document.getElementById('btn').addEventListener('click', function (event) {
+    event = event || window.event；
+
+    if (event.preventDefault){
+        // W3C
+        event.preventDefault();
+    } else{
+        // IE
+        event.returnValue = false;
+    }
+}, false);
+
+// jQuery
+$('#btn').on('click', function (event) {
+    event.preventDefault();
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h2 id="十、阻止冒泡"><a href="#十、阻止冒泡" aria-hidden="true" class="header-anchor">#</a> 十、阻止冒泡</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>// JavaScript
+document.getElementById('btn').addEventListener('click', function (event) {
+    event = event || window.event；
+
+    if (event.stopPropagation){
+        // W3C
+        event.stopPropagation();
+    } else{
+        // IE
+        event.cancelBubble = true;
+    }
+}, false);
+
+// jQuery
+$('#btn').on('click', function (event) {
+    event.stopPropagation();
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h2 id="十一、检测浏览器是否支持svg"><a href="#十一、检测浏览器是否支持svg" aria-hidden="true" class="header-anchor">#</a> 十一、检测浏览器是否支持svg</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>function isSupportSVG() { 
+    var SVG_NS = 'http://www.w3.org/2000/svg';
+    return !!document.createElementNS &amp;&amp;!!document.createElementNS(SVG_NS, 'svg').createSVGRect; 
+} 
+
+console.log(isSupportSVG());
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br></div></div><h2 id="十二、检测浏览器是否支持canvas"><a href="#十二、检测浏览器是否支持canvas" aria-hidden="true" class="header-anchor">#</a> 十二、检测浏览器是否支持canvas</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>function isSupportCanvas() {
+    if(document.createElement('canvas').getContext){
+        return true;
+    }else{
+        return false;
+    }
+}
+
+console.log(isSupportCanvas());
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h2 id="十三、检测是否是微信浏览器"><a href="#十三、检测是否是微信浏览器" aria-hidden="true" class="header-anchor">#</a> 十三、检测是否是微信浏览器</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>function isWeiXinClient() {
+    var ua = navigator.userAgent.toLowerCase(); 
+    if (ua.match(/MicroMessenger/i)==&quot;micromessenger&quot;) { 
+        return true; 
+    } else { 
+        return false; 
+    }
+}
+
+alert(isWeiXinClient());
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><h2 id="十四、检测是否移动端及浏览器内核"><a href="#十四、检测是否移动端及浏览器内核" aria-hidden="true" class="header-anchor">#</a> 十四、检测是否移动端及浏览器内核</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>var browser = { 
+    versions: function() { 
+        var u = navigator.userAgent; 
+        return { 
+            trident: u.indexOf('Trident') &gt; -1, //IE内核 
+            presto: u.indexOf('Presto') &gt; -1, //opera内核 
+            webKit: u.indexOf('AppleWebKit') &gt; -1, //苹果、谷歌内核 
+            gecko: u.indexOf('Firefox') &gt; -1, //火狐内核Gecko 
+            mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否移动终端 
+            ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios 
+            android: u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1, //android 
+            iPhone: u.indexOf('iPhone') &gt; -1 , //iPhone 
+            iPad: u.indexOf('iPad') &gt; -1, //iPad 
+            webApp: u.indexOf('Safari') &gt; -1 //Safari 
+        }; 
+    }
+} 
+
+if (browser.versions.mobile() || browser.versions.ios() || browser.versions.android() || browser.versions.iPhone() || browser.versions.iPad()) { 
+    alert('移动端'); 
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="十五、检测是否电脑端-移动端"><a href="#十五、检测是否电脑端-移动端" aria-hidden="true" class="header-anchor">#</a> 十五、检测是否电脑端/移动端</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>var browser={ 
+    versions:function(){
+        var u = navigator.userAgent, app = navigator.appVersion;
+        var sUserAgent = navigator.userAgent;
+        return {
+        trident: u.indexOf('Trident') &gt; -1,
+        presto: u.indexOf('Presto') &gt; -1, 
+        isChrome: u.indexOf(&quot;chrome&quot;) &gt; -1, 
+        isSafari: !u.indexOf(&quot;chrome&quot;) &gt; -1 &amp;&amp; (/webkit|khtml/).test(u),
+        isSafari3: !u.indexOf(&quot;chrome&quot;) &gt; -1 &amp;&amp; (/webkit|khtml/).test(u) &amp;&amp; u.indexOf('webkit/5') != -1,
+        webKit: u.indexOf('AppleWebKit') &gt; -1, 
+        gecko: u.indexOf('Gecko') &gt; -1 &amp;&amp; u.indexOf('KHTML') == -1,
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), 
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), 
+        android: u.indexOf('Android') &gt; -1 || u.indexOf('Linux') &gt; -1,
+        iPhone: u.indexOf('iPhone') &gt; -1, 
+        iPad: u.indexOf('iPad') &gt; -1,
+        iWinPhone: u.indexOf('Windows Phone') &gt; -1
+        };
+    }()
+}
+if(browser.versions.mobile || browser.versions.iWinPhone){
+    window.location = &quot;http:/www.baidu.com/m/&quot;;
+} 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div><h2 id="十六、检测浏览器内核"><a href="#十六、检测浏览器内核" aria-hidden="true" class="header-anchor">#</a> 十六、检测浏览器内核</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>function getInternet(){    
+    if(navigator.userAgent.indexOf(&quot;MSIE&quot;)&gt;0) {    
+      return &quot;MSIE&quot;;       //IE浏览器  
+    }  
+
+    if(isFirefox=navigator.userAgent.indexOf(&quot;Firefox&quot;)&gt;0){    
+      return &quot;Firefox&quot;;     //Firefox浏览器  
+    }  
+
+    if(isSafari=navigator.userAgent.indexOf(&quot;Safari&quot;)&gt;0) {    
+      return &quot;Safari&quot;;      //Safan浏览器  
+    }  
+
+    if(isCamino=navigator.userAgent.indexOf(&quot;Camino&quot;)&gt;0){    
+      return &quot;Camino&quot;;   //Camino浏览器  
+    }  
+    if(isMozilla=navigator.userAgent.indexOf(&quot;Gecko/&quot;)&gt;0){    
+      return &quot;Gecko&quot;;    //Gecko浏览器  
+    }    
+} 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="十七、强制移动端页面横屏显示"><a href="#十七、强制移动端页面横屏显示" aria-hidden="true" class="header-anchor">#</a> 十七、强制移动端页面横屏显示</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>$( window ).on( &quot;orientationchange&quot;, function( event ) {
+    if (event.orientation=='portrait') {
+        $('body').css('transform', 'rotate(90deg)');
+    } else {
+        $('body').css('transform', 'rotate(0deg)');
+    }
+});
+$( window ).orientationchange();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h2 id="十八、电脑端页面全屏显示"><a href="#十八、电脑端页面全屏显示" aria-hidden="true" class="header-anchor">#</a> 十八、电脑端页面全屏显示</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>function fullscreen(element) {
+    if (element.requestFullscreen) {
+        element.requestFullscreen();
+    } else if (element.mozRequestFullScreen) {
+        element.mozRequestFullScreen();
+    } else if (element.webkitRequestFullscreen) {
+        element.webkitRequestFullscreen();
+    } else if (element.msRequestFullscreen) {
+        element.msRequestFullscreen();
+    }
+}
+
+fullscreen(document.documentElement);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><h2 id="十九、获得-失去焦点"><a href="#十九、获得-失去焦点" aria-hidden="true" class="header-anchor">#</a> 十九、获得/失去焦点</h2> <h3 id="_1、javascript实现-2"><a href="#_1、javascript实现-2" aria-hidden="true" class="header-anchor">#</a> 1、JavaScript实现</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;input id=&quot;i_input&quot; type=&quot;text&quot; value='会员卡号/手机号'/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>// JavaScript
+window.onload = function(){
+    var oIpt = document.getElementById(&quot;i_input&quot;);
+
+    if(oIpt.value == &quot;会员卡号/手机号&quot;){
+        oIpt.style.color = &quot;#888&quot;;
+    }else{
+        oIpt.style.color = &quot;#000&quot;;
+    };
+
+    oIpt.onfocus = function(){
+        if(this.value == &quot;会员卡号/手机号&quot;){
+            this.value=&quot;&quot;;
+            this.style.color = &quot;#000&quot;;
+            this.type = &quot;password&quot;;
+        }else{
+            this.style.color = &quot;#000&quot;;
+        }
+    };
+    
+    oIpt.onblur = function(){
+        if(this.value == &quot;&quot;){
+            this.value=&quot;会员卡号/手机号&quot;;
+            this.style.color = &quot;#888&quot;;
+            this.type = &quot;text&quot;;
+        }
+    };
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br></div></div><h3 id="_2、jquery实现-2"><a href="#_2、jquery实现-2" aria-hidden="true" class="header-anchor">#</a> 2、jQuery实现</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;input type=&quot;text&quot;  class=&quot;oldpsw&quot; id=&quot;showPwd&quot; value=&quot;请输入您的注册密码&quot;/&gt;
+&lt;input type=&quot;password&quot; name=&quot;psw&quot; class=&quot;oldpsw&quot; id=&quot;password&quot; value=&quot;&quot; style=&quot;display:none;&quot;/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>// jQuery
+$(&quot;#showPwd&quot;).focus(function() {
+    var text_value=$(this).val();
+    if (text_value =='请输入您的注册密码') {
+        $(&quot;#showPwd&quot;).hide();
+        $(&quot;#password&quot;).show().focus();
+    }
+});
+$(&quot;#password&quot;).blur(function() {
+    var text_value = $(this).val();
+    if (text_value == &quot;&quot;) {
+        $(&quot;#showPwd&quot;).show();
+        $(&quot;#password&quot;).hide();
+    }
+}); 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="二十、获取上传文件大小"><a href="#二十、获取上传文件大小" aria-hidden="true" class="header-anchor">#</a> 二十、获取上传文件大小</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;input type=&quot;file&quot; id=&quot;filePath&quot; onchange=&quot;getFileSize(this)&quot;/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>// 兼容IE9低版本
+function getFileSize(obj){
+    var filesize;
+    
+    if(obj.files){
+        filesize = obj.files[0].size;
+    }else{
+        try{
+            var path,fso; 
+            path = document.getElementById('filePath').value;
+            fso = new ActiveXObject(&quot;Scripting.FileSystemObject&quot;); 
+            filesize = fso.GetFile(path).size; 
+        }
+        catch(e){
+            // 在IE9及低版本浏览器，如果不容许ActiveX控件与页面交互，点击了否，就无法获取size
+            console.log(e.message); // Automation 服务器不能创建对象
+            filesize = 'error'; // 无法获取
+        }
+    }
+    return filesize;
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="二十一、限制上传文件类型"><a href="#二十一、限制上传文件类型" aria-hidden="true" class="header-anchor">#</a> 二十一、限制上传文件类型</h2> <h3 id="_1、高版本浏览器"><a href="#_1、高版本浏览器" aria-hidden="true" class="header-anchor">#</a> 1、高版本浏览器</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;input type=&quot;file&quot; name=&quot;filePath&quot; accept=&quot;.jpg,.jpeg,.doc,.docxs,.pdf&quot;&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_2、限制图片"><a href="#_2、限制图片" aria-hidden="true" class="header-anchor">#</a> 2、限制图片</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;input type=&quot;file&quot; class=&quot;file&quot; value=&quot;上传&quot; accept=&quot;image/*&quot;/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><h3 id="_3、低版本浏览器"><a href="#_3、低版本浏览器" aria-hidden="true" class="header-anchor">#</a> 3、低版本浏览器</h3> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;input type=&quot;file&quot; id=&quot;filePath&quot; onchange=&quot;limitTypes()&quot;/&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>/* 通过扩展名，检验文件格式。
+ * @parma filePath{string} 文件路径
+ * @parma acceptFormat{Array} 允许的文件类型
+ * @result 返回值{Boolen}：true or false
+ */
+
+function checkFormat(filePath,acceptFormat){
+    var resultBool= false,
+        ex = filePath.substring(filePath.lastIndexOf('.') + 1);
+        ex = ex.toLowerCase();
+        
+    for(var i = 0; i &lt; acceptFormat.length; i++){
+    　　if(acceptFormat[i] == ex){
+            resultBool = true;
+            break;
+    　　}
+    }
+    return resultBool;
+};
+        
+function limitTypes(){
+    var obj = document.getElementById('filePath');
+    var path = obj.value;
+    var result = checkFormat(path,['bmp','jpg','jpeg','png']);
+    
+    if(!result){
+        alert('上传类型错误，请重新上传');
+        obj.value = '';
+    }
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br></div></div><h2 id="二十二、正则表达式"><a href="#二十二、正则表达式" aria-hidden="true" class="header-anchor">#</a> 二十二、正则表达式</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>//验证邮箱 
+/^\w+@([0-9a-zA-Z]+[.])+[a-z]{2,4}$/ 
+
+//验证手机号 
+/^1[3|5|8|7]\d{9}$/ 
+
+//验证URL 
+/^http:\/\/.+\./
+
+//验证身份证号码 
+/(^\d{15}$)|(^\d{17}([0-9]|X|x)$)/ 
+
+//匹配字母、数字、中文字符 
+/^([A-Za-z0-9]|[\u4e00-\u9fa5])*$/ 
+
+//匹配中文字符
+/[\u4e00-\u9fa5]/ 
+
+//匹配双字节字符(包括汉字) 
+/[^\x00-\xff]/
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><h2 id="二十三、限制字符数"><a href="#二十三、限制字符数" aria-hidden="true" class="header-anchor">#</a> 二十三、限制字符数</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;input id=&quot;txt&quot; type=&quot;text&quot;&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>//字符串截取
+function getByteVal(val, max) {
+    var returnValue = '';
+    var byteValLen = 0;
+    for (var i = 0; i &lt; val.length; i++) { if (val[i].match(/[^\x00-\xff]/ig) != null) byteValLen += 2; else byteValLen += 1; if (byteValLen &gt; max) break;
+        returnValue += val[i];
+    }
+    return returnValue;
+}
+
+$('#txt').on('keyup', function () {
+    var val = this.value;
+    if (val.replace(/[^\x00-\xff]/g, &quot;**&quot;).length &gt; 14) {
+        this.value = getByteVal(val, 14);
+    }
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br></div></div><h2 id="二十四、验证码倒计时"><a href="#二十四、验证码倒计时" aria-hidden="true" class="header-anchor">#</a> 二十四、验证码倒计时</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;input id=&quot;send&quot; type=&quot;button&quot; value=&quot;发送验证码&quot;&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>// JavaScript
+var times = 60, // 时间设置60秒
+    timer = null;
+            
+document.getElementById('send').onclick = function () {
+    // 计时开始
+    timer = setInterval(function () {
+        times--;
+        
+        if (times &lt;= 0) {
+            send.value = '发送验证码';
+            clearInterval(timer);
+            send.disabled = false;
+            times = 60;
+        } else {
+            send.value = times + '秒后重试';
+            send.disabled = true;
+        }
+    }, 1000);
+}
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>var times = 60,
+    timer = null;
+
+$('#send').on('click', function () {
+    var $this = $(this);
+    
+    // 计时开始
+    timer = setInterval(function () {
+        times--;
+        
+        if (times &lt;= 0) {
+            $this.val('发送验证码');
+            clearInterval(timer);
+            $this.attr('disabled', false);
+            times = 60;
+        } else {
+            $this.val(times + '秒后重试');
+            $this.attr('disabled', true);
+        }
+    }, 1000);
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h2 id="二十五、时间倒计时"><a href="#二十五、时间倒计时" aria-hidden="true" class="header-anchor">#</a> 二十五、时间倒计时</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;p id=&quot;_lefttime&quot;&gt;&lt;/p&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>function countdown() {
+
+    var endtime = new Date(&quot;May 2, 2018 21:31:09&quot;);
+    var nowtime = new Date();
+
+    if (nowtime &gt;= endtime) {
+        document.getElementById(&quot;_lefttime&quot;).innerHTML = &quot;倒计时间结束&quot;;
+        return;
+    }
+
+    var leftsecond = parseInt((endtime.getTime() - nowtime.getTime()) / 1000);
+    if (leftsecond &lt; 0) {
+        leftsecond = 0;
+    }
+
+    __d = parseInt(leftsecond / 3600 / 24);
+    __h = parseInt((leftsecond / 3600) % 24);
+    __m = parseInt((leftsecond / 60) % 60); 
+    __s = parseInt(leftsecond % 60);
+
+    document.getElementById(&quot;_lefttime&quot;).innerHTML = __d + &quot;天&quot; + __h + &quot;小时&quot; + __m + &quot;分&quot; + __s + &quot;秒&quot;;
+}
+
+countdown();
+
+setInterval(countdown, 1000);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="二十六、倒计时跳转"><a href="#二十六、倒计时跳转" aria-hidden="true" class="header-anchor">#</a> 二十六、倒计时跳转</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;div id=&quot;showtimes&quot;&gt;&lt;/div&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>// 设置倒计时秒数  
+var t = 10;  
+
+// 显示倒计时秒数  
+function showTime(){  
+    t -= 1;  
+    document.getElementById('showtimes').innerHTML= t;  
+
+    if(t==0){  
+        location.href='error404.asp';  
+    }  
+
+    //每秒执行一次 showTime()  
+    setTimeout(&quot;showTime()&quot;,1000);  
+}  
+
+showTime();
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><h2 id="二十七、时间戳、毫秒格式化"><a href="#二十七、时间戳、毫秒格式化" aria-hidden="true" class="header-anchor">#</a> 二十七、时间戳、毫秒格式化</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>var getLocalTime = function (nS, format) {
+    var now = new Date(parseInt(nS) * 1000);
+    var year = now.getFullYear();
+    var month = now.getMonth() + 1;
+    var date = now.getDate();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    var milliseconds = now.getMilliseconds();
+
+    var o = {
+        &quot;M+&quot;: month, // month
+        &quot;d+&quot;: date, // day
+        &quot;h+&quot;: hour, // hour
+        &quot;H+&quot;: hour, // hour
+        &quot;m+&quot;: minute, // minute
+        &quot;s+&quot;: second, // second
+        &quot;q+&quot;: Math.floor((month + 3) / 3), // quarter
+        &quot;S&quot;: milliseconds
+        // millisecond
+    };
+
+    if (/(y+)/.test(format)) {
+        format = format.replace(RegExp.$1, (year + &quot;&quot;)
+            .substr(4 - RegExp.$1.length));
+    }
+
+    for (var k in o) {
+        if (new RegExp(&quot;(&quot; + k + &quot;)&quot;).test(format)) {
+            format = format.replace(RegExp.$1, RegExp.$1.length == 1 ? o[k]
+                : (&quot;00&quot; + o[k]).substr((&quot;&quot; + o[k]).length));
+        }
+    }
+
+    return format;
+};
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><h2 id="二十八、当前日期"><a href="#二十八、当前日期" aria-hidden="true" class="header-anchor">#</a> 二十八、当前日期</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>var calculateDate = function(){
+
+    var date = new Date();
+    var weeks = [&quot;日&quot;,&quot;一&quot;,&quot;二&quot;,&quot;三&quot;,&quot;四&quot;,&quot;五&quot;,&quot;六&quot;];
+
+    return date.getFullYear()+&quot;年&quot;+(date.getMonth()+1)+&quot;月&quot;+
+    date.getDate()+&quot;日 星期&quot;+weeks[date.getDay()];
+}
+
+$(function(){
+    $(&quot;#dateSpan&quot;).html(calculateDate());
+});
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><h2 id="二十九、判断周六-周日"><a href="#二十九、判断周六-周日" aria-hidden="true" class="header-anchor">#</a> 二十九、判断周六/周日</h2> <div class="language- line-numbers-mode"><pre class="language-text"><code>&lt;p id=&quot;text&quot;&gt;&lt;/p&gt;
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>function time(y,m){
+    var tempTime = new Date(y,m,0);
+    var time = new Date();
+    var saturday = new Array();
+    var sunday = new Array();
+    
+    for(var i=1;i&lt;=tempTime.getDate();i++){
+        time.setFullYear(y,m-1,i);
+        
+        var day = time.getDay();
+        
+        if(day == 6){
+            saturday.push(i);
+        }else if(day == 0){
+            sunday.push(i);
+        }
+    }
+    
+    var text = y+&quot;年&quot;+m+&quot;月份&quot;+&quot;&lt;br /&gt;&quot;
+                +&quot;周六：&quot;+saturday.toString()+&quot;&lt;br /&gt;&quot;
+                +&quot;周日：&quot;+sunday.toString();
+                
+    document.getElementById(&quot;text&quot;).innerHTML = text;
+}
+ 
+time(2018,5);
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br></div></div><h2 id="三十、ajax调用错误处理"><a href="#三十、ajax调用错误处理" aria-hidden="true" class="header-anchor">#</a> 三十、AJAX调用错误处理</h2> <p>当 Ajax 调用返回 404 或 500 错误时，就执行错误处理程序。如果没有定义处理程序，其他的 jQuery 代码或会就此罢工。定义一个全局的 Ajax 错误处理程序</p> <p><img src="https://segmentfault.com/img/bV9M44?w=643&h=78/view" alt="img"></p> <h2 id="三十一、链式插件调用"><a href="#三十一、链式插件调用" aria-hidden="true" class="header-anchor">#</a> 三十一、链式插件调用</h2> <p>jQuery 允许“链式”插件的方法调用，以减轻反复查询 DOM 并创建多个 jQuery 对象的过程。</p> <p><img src="https://segmentfault.com/img/bV9M5r?w=271&h=77/view" alt="img"></p> <p>通过使用链式，可以改善</p> <p><img src="https://segmentfault.com/img/bV9M5E?w=159&h=102/view" alt="img"></p> <p>还有一种方法是在（<strong>前缀$</strong>）变量中高速缓存元素</p> <p><img src="https://segmentfault.com/img/bV9M50?w=259&h=98/view" alt="img"></p> <p>链式和高速缓存的方法都是 jQuery 中可以让代码变得更短和更快的最佳做法。</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/14/2018, 5:13:48 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/Blog/assets/js/27.fc3fad79.js" defer></script><script src="/Blog/assets/js/app.b624378b.js" defer></script>
+  </body>
+</html>

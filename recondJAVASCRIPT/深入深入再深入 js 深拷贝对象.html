@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>深入深入再深入 js 深拷贝对象 | 小三胖技术栈</title>
+    <meta name="description" content="佛系前端大神">
+    <meta charset="UTF-8">
+  <link rel="icon" href="/Blog/favicon.ico">
+    
+    <link rel="preload" href="/Blog/assets/css/0.styles.9ba1bd5b.css" as="style"><link rel="preload" href="/Blog/assets/js/app.b624378b.js" as="script"><link rel="preload" href="/Blog/assets/js/28.cd83fc3d.js" as="script"><link rel="prefetch" href="/Blog/assets/js/25.812a025f.js"><link rel="prefetch" href="/Blog/assets/js/2.6f79cb1b.js"><link rel="prefetch" href="/Blog/assets/js/3.d16a0c2c.js"><link rel="prefetch" href="/Blog/assets/js/4.981975ce.js"><link rel="prefetch" href="/Blog/assets/js/5.22251c73.js"><link rel="prefetch" href="/Blog/assets/js/6.628e770d.js"><link rel="prefetch" href="/Blog/assets/js/7.07e2b6b4.js"><link rel="prefetch" href="/Blog/assets/js/8.2bccae8e.js"><link rel="prefetch" href="/Blog/assets/js/9.5fab895e.js"><link rel="prefetch" href="/Blog/assets/js/10.322ce4df.js"><link rel="prefetch" href="/Blog/assets/js/11.006e4719.js"><link rel="prefetch" href="/Blog/assets/js/12.3333e057.js"><link rel="prefetch" href="/Blog/assets/js/13.1af90041.js"><link rel="prefetch" href="/Blog/assets/js/14.182c46a3.js"><link rel="prefetch" href="/Blog/assets/js/15.1cbbb4a1.js"><link rel="prefetch" href="/Blog/assets/js/16.49b9f0b6.js"><link rel="prefetch" href="/Blog/assets/js/17.29b175e7.js"><link rel="prefetch" href="/Blog/assets/js/18.297427c5.js"><link rel="prefetch" href="/Blog/assets/js/19.2663f562.js"><link rel="prefetch" href="/Blog/assets/js/20.b7420290.js"><link rel="prefetch" href="/Blog/assets/js/21.d39c8908.js"><link rel="prefetch" href="/Blog/assets/js/22.f1126d66.js"><link rel="prefetch" href="/Blog/assets/js/23.4a7a29be.js"><link rel="prefetch" href="/Blog/assets/js/24.e6bca216.js"><link rel="prefetch" href="/Blog/assets/js/26.9960f054.js"><link rel="prefetch" href="/Blog/assets/js/27.fc3fad79.js"><link rel="prefetch" href="/Blog/assets/js/29.443e4941.js"><link rel="prefetch" href="/Blog/assets/js/30.6a8a17b9.js"><link rel="prefetch" href="/Blog/assets/js/31.8fc47db9.js"><link rel="prefetch" href="/Blog/assets/js/32.b715a23d.js"><link rel="prefetch" href="/Blog/assets/js/33.518efbd0.js"><link rel="prefetch" href="/Blog/assets/js/34.76e7b1b1.js"><link rel="prefetch" href="/Blog/assets/js/35.f8a6b00b.js"><link rel="prefetch" href="/Blog/assets/js/36.8c12af51.js"><link rel="prefetch" href="/Blog/assets/js/37.cda5ca1d.js"><link rel="prefetch" href="/Blog/assets/js/38.60935ef0.js"><link rel="prefetch" href="/Blog/assets/js/39.26c637dd.js"><link rel="prefetch" href="/Blog/assets/js/40.44a0bfa7.js"><link rel="prefetch" href="/Blog/assets/js/41.259d1527.js"><link rel="prefetch" href="/Blog/assets/js/42.ab80d836.js"><link rel="prefetch" href="/Blog/assets/js/43.0af190a7.js"><link rel="prefetch" href="/Blog/assets/js/44.093f7743.js"><link rel="prefetch" href="/Blog/assets/js/45.8c17580f.js"><link rel="prefetch" href="/Blog/assets/js/46.fd30eace.js"><link rel="prefetch" href="/Blog/assets/js/47.214dd0f8.js"><link rel="prefetch" href="/Blog/assets/js/48.d43dc2ae.js"><link rel="prefetch" href="/Blog/assets/js/49.6136b23c.js"><link rel="prefetch" href="/Blog/assets/js/50.fd4e81e2.js"><link rel="prefetch" href="/Blog/assets/js/51.9fa346c5.js"><link rel="prefetch" href="/Blog/assets/js/52.6e5d9385.js"><link rel="prefetch" href="/Blog/assets/js/53.19db09c4.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.9ba1bd5b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">小三胖技术栈</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/recondRESUME/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/Blog/recondCSS/" class="nav-link">Css</a></div><div class="nav-item"><a href="/Blog/recondJAVASCRIPT/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/Blog/recondVUE/" class="nav-link">Vue</a></div><div class="nav-item"><a href="/Blog/recondNODE/" class="nav-link">Node</a></div><div class="nav-item"><a href="/Blog/recondES6/" class="nav-link">Es6</a></div><div class="nav-item"><a href="/Blog/recondPROJECT/" class="nav-link">projectify</a></div><div class="nav-item"><a href="/Blog/recondSUMMARY/" class="nav-link">summary</a></div><div class="nav-item"><a href="/Blog/recondFEATURE/" class="nav-link">feature</a></div><div class="nav-item"><a href="/Blog/recondGIT/" class="nav-link">git</a></div><div class="nav-item"><a href="/Blog/recondOTHER/" class="nav-link">other</a></div><div class="nav-item"><a href="https://github.com/gaojingwen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/recondRESUME/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/Blog/recondCSS/" class="nav-link">Css</a></div><div class="nav-item"><a href="/Blog/recondJAVASCRIPT/" class="nav-link router-link-active">Javascript</a></div><div class="nav-item"><a href="/Blog/recondVUE/" class="nav-link">Vue</a></div><div class="nav-item"><a href="/Blog/recondNODE/" class="nav-link">Node</a></div><div class="nav-item"><a href="/Blog/recondES6/" class="nav-link">Es6</a></div><div class="nav-item"><a href="/Blog/recondPROJECT/" class="nav-link">projectify</a></div><div class="nav-item"><a href="/Blog/recondSUMMARY/" class="nav-link">summary</a></div><div class="nav-item"><a href="/Blog/recondFEATURE/" class="nav-link">feature</a></div><div class="nav-item"><a href="/Blog/recondGIT/" class="nav-link">git</a></div><div class="nav-item"><a href="/Blog/recondOTHER/" class="nav-link">other</a></div><div class="nav-item"><a href="https://github.com/gaojingwen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Javascript</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/Blog/recondJAVASCRIPT/" class="sidebar-link">大笨蛋</a></li><li><a href="/Blog/recondJAVASCRIPT/7分钟理解JS的节流、防抖及使用场景.html" class="sidebar-link">7分钟理解JS的节流、防抖及使用场景</a></li><li><a href="/Blog/recondJAVASCRIPT/FormData 对象的使用.html" class="sidebar-link">FormData 对象的使用</a></li><li><a href="/Blog/recondJAVASCRIPT/JavaScript 运行原理解析.html" class="sidebar-link">JavaScript 运行原理解析</a></li><li><a href="/Blog/recondJAVASCRIPT/js--API.html" class="sidebar-link">js--API</a></li><li><a href="/Blog/recondJAVASCRIPT/JS数组循环的性能和效率分析（for、while、forEach、map、for of）.html" class="sidebar-link">JS数组循环的性能和效率分析（for、while、forEach、map、for of）</a></li><li><a href="/Blog/recondJAVASCRIPT/分享前端开发常用代码片段.html" class="sidebar-link">分享前端开发常用代码片段</a></li><li><a href="/Blog/recondJAVASCRIPT/前端开发常用代码片段.html" class="sidebar-link">前端开发常用代码片段</a></li><li><a href="/Blog/recondJAVASCRIPT/深入深入再深入 js 深拷贝对象.html" class="active sidebar-link">深入深入再深入 js 深拷贝对象</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/深入深入再深入 js 深拷贝对象.html#前言" class="sidebar-link">前言</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/深入深入再深入 js 深拷贝对象.html#_1-迭代递归法" class="sidebar-link">1. 迭代递归法</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/深入深入再深入 js 深拷贝对象.html#_2-序列化反序列化法" class="sidebar-link">2.序列化反序列化法</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/深入深入再深入 js 深拷贝对象.html#深入深入再深入" class="sidebar-link">深入深入再深入</a></li><li class="sidebar-sub-header"><a href="/Blog/recondJAVASCRIPT/深入深入再深入 js 深拷贝对象.html#结语" class="sidebar-link">结语</a></li></ul></li></ul></li><li><a href="/Blog/recondJAVASCRIPT/请你实现一个深克隆.html" class="sidebar-link">面试官:请你实现一个深克隆</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="深入深入再深入-js-深拷贝对象"><a href="#深入深入再深入-js-深拷贝对象" aria-hidden="true" class="header-anchor">#</a> 深入深入再深入 js 深拷贝对象</h1> <h2 id="前言"><a href="#前言" aria-hidden="true" class="header-anchor">#</a> 前言</h2> <p>对象是 JS 中基本类型之一，而且和原型链、数组等知识息息相关。不管是面试中，还是实际开发中我们都会碰见深拷贝对象的问题。</p> <p>顾名思义，深拷贝就是完完整整的将一个对象从内存中拷贝一份出来。所以无论用什么办法，必然绕不开开辟一块新的内存空间。</p> <p>通常有下面两种方法实现深拷贝：</p> <ol><li>迭代递归法</li> <li>序列化反序列化法</li></ol> <p>我们会基于一个测试用例对常用的实现方法进行测试并对比优劣：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let test = {
+    num: 0,
+    str: '',
+    boolean: true,
+    unf: undefined,
+    nul: null,
+    obj: {
+        name: '我是一个对象',
+        id: 1
+    },
+    arr: [0, 1, 2],
+    func: function() {
+        console.log('我是一个函数')
+    },
+    date: new Date(0),
+    reg: new RegExp('/我是一个正则/ig'),
+    err: new Error('我是一个错误')
+}
+
+let result = deepClone(test)
+
+console.log(result)
+for (let key in result) {
+    if (isObject(result[key]))
+        console.log(`${key}相同吗？ `, result[key] === test[key])
+}
+
+// 判断是否为对象
+function isObject(o) {
+    return (typeof o === 'object' || typeof o === 'function') &amp;&amp; o !== null
+}
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br></div></div><h3 id="_1-迭代递归法"><a href="#_1-迭代递归法" aria-hidden="true" class="header-anchor">#</a> 1. 迭代递归法</h3> <p>这是最常规的方法，思想很简单：就是对对象进行迭代操作，对它的每个值进行递归深拷贝。</p> <ul><li><h4 id="for-in-法"><a href="#for-in-法" aria-hidden="true" class="header-anchor">#</a> <a href="https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FWeb%2FJavaScript%2FReference%2FStatements%2Ffor...in" target="_blank" rel="noopener noreferrer">for...in<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 法</h4></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 迭代递归法：深拷贝对象与数组
+function deepClone(obj) {
+    if (!isObject(obj)) {
+        throw new Error('obj 不是一个对象！')
+    }
+
+    let isArray = Array.isArray(obj)
+    let cloneObj = isArray ? [] : {}
+    for (let key in obj) {
+        cloneObj[key] = isObject(obj[key]) ? deepClone(obj[key]) : obj[key]
+    }
+
+    return cloneObj
+}
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>结果：
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>![迭代递归法结果.png](data:image/svg+xml;utf8,&lt;?xml version=&quot;1.0&quot;?&gt;<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="509" height="351"></svg>)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>我们发现，arr 和 obj 都深拷贝成功了，它们的内存引用已经不同了，但 func、date、reg 和 err 并没有复制成功，因为它们有特殊的构造函数。
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li><h4 id="reflect-法"><a href="#reflect-法" aria-hidden="true" class="header-anchor">#</a> Reflect 法</h4></li></ul> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 代理法
+function deepClone(obj) {
+    if (!isObject(obj)) {
+        throw new Error('obj 不是一个对象！')
+    }
+
+    let isArray = Array.isArray(obj)
+    let cloneObj = isArray ? [...obj] : { ...obj }
+    Reflect.ownKeys(cloneObj).forEach(key =&gt; {
+        cloneObj[key] = isObject(obj[key]) ? deepClone(obj[key]) : obj[key]
+    })
+
+    return cloneObj
+}
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><div class="language- line-numbers-mode"><pre class="language-text"><code>结果：
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>![代理法结果](data:image/svg+xml;utf8,&lt;?xml version=&quot;1.0&quot;?&gt;<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="551" height="345"></svg>)</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>我们发现，结果和使用 for...in 一样。那么它有什么优点呢？读者可以先猜一猜，答案我们会在下文揭晓。
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><ul><li><h4 id="lodash-中的深拷贝"><a href="#lodash-中的深拷贝" aria-hidden="true" class="header-anchor">#</a> lodash 中的深拷贝</h4> <p>著名的 lodash 中的 cloneDeep 方法同样是使用这种方法实现的，只不过它支持的对象种类更多，具体的实现过程读者可以参考<a href="https://link.juejin.im/?target=https%3A%2F%2Fgithub.com%2Flodash%2Flodash%2Fblob%2Fmaster%2F.internal%2FbaseClone.js" target="_blank" rel="noopener noreferrer"> lodash 的 baseClone 方法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>。</p> <p>我们把测试用例用到的深拷贝函数换成 lodash 的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let result = _.cloneDeep(test)
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>结果：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/4/18/162d6bbd7414c09c?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="lodash深拷贝结果.png"></p> <p>​</p> <p>我们发现，arr、obj、date、reg深拷贝成功了，但 func 和 err 内存引用仍然不变。</p> <p>为什么不变呢？这个问题留给读者自己去探寻，嘿嘿~不过可以提示下，这跟 lodash 中的 cloneableTags 有关。</p> <p>由于前端中的对象种类太多了，所以 lodash 也给用户准备了自定义深拷贝的方法 <a href="https://link.juejin.im/?target=https%3A%2F%2Flodash.com%2Fdocs%2F4.17.5%23cloneDeepWith" target="_blank" rel="noopener noreferrer">cloneDeepWith<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，比如自定义深拷贝 DOM 对象：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function customizer(value) {
+  if (_.isElement(value)) {
+    return value.cloneNode(true);
+  }
+}
+
+var el = _.cloneDeepWith(document.body, customizer);
+ 
+console.log(el === document.body);
+// =&gt; false
+console.log(el.nodeName);
+// =&gt; 'BODY'
+console.log(el.childNodes.length);
+// =&gt; 20
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></li></ul> <h3 id="_2-序列化反序列化法"><a href="#_2-序列化反序列化法" aria-hidden="true" class="header-anchor">#</a> 2.序列化反序列化法</h3> <p>这个方法非常有趣，它先把代码序列化成数据，再反序列化回对象：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 序列化反序列化法
+function deepClone(obj) {
+    return JSON.parse(JSON.stringify(obj))
+}
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>结果：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/4/18/162d6bbd73c055b2?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="序列化反序列化法结果.png"></p> <h3 id="深入深入再深入"><a href="#深入深入再深入" aria-hidden="true" class="header-anchor">#</a> 深入深入再深入</h3> <ol><li><p>对象成环怎么办？ 我们给 test 加一个 loopObj 键，值指向自身：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>test.loopObj = test
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>这时我们使用第一种方法中的 for..in 实现和 Reflect 实现都会栈溢出：</p> <p>![环对象深拷贝报错](data:image/svg+xml;utf8,&lt;?xml version=&quot;1.0&quot;?&gt;<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="828" height="159"></svg>)</p> <p>​</p> <p>而使用第二种方法也会报错：</p> <p>![img](data:image/svg+xml;utf8,&lt;?xml version=&quot;1.0&quot;?&gt;<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="432" height="58"></svg>)</p> <p>​</p> <p>但 lodash 却可以得到正确结果：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/4/18/162d6bbd945ea83b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="lodash 深拷贝环对象.png"></p> <p>​</p> <p>为什么呢？我们去 lodash 源码看看：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/4/18/162d6bbd8d654360?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="lodash 应对环对象办法.png"></p> <p>​</p> <p>因为 lodash 使用的是栈把对象存储起来了，如果有环对象，就会从栈里检测到，从而直接返回结果，悬崖勒马。这种算法思想来源于 HTML5 规范定义的<a href="https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FWeb%2FGuide%2FAPI%2FDOM%2FThe_structured_clone_algorithm%23%25E7%259B%25B8%25E5%2585%25B3%25E9%2593%25BE%25E6%258E%25A5" target="_blank" rel="noopener noreferrer">结构化克隆算法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>，它同时也解释了为什么 lodash 不对 Error 和 Function 类型进行拷贝。</p> <p>当然，设置一个哈希表存储已拷贝过的对象同样可以达到同样的目的：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function deepClone(obj, hash = new WeakMap()) {
+    if (!isObject(obj)) {
+        return obj
+    }
+    // 查表
+    if (hash.has(obj)) return hash.get(obj)
+
+    let isArray = Array.isArray(obj)
+    let cloneObj = isArray ? [] : {}
+    // 哈希表设值
+    hash.set(obj, cloneObj)
+
+    let result = Object.keys(obj).map(key =&gt; {
+        return {
+            [key]: deepClone(obj[key], hash)
+        }
+    })
+    return Object.assign(cloneObj, ...result)
+}
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br></div></div><p>这里我们使用 WeakMap 作为哈希表，因为它的键是弱引用的，而我们这个场景里键恰好是对象，需要弱引用。</p></li> <li><p>键不是字符串而是 Symbol</p> <p>我们修改一下测试用例：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>var test = {}
+let sym = Symbol('我是一个Symbol')
+test[sym] = 'symbol'
+
+let result = deepClone(test)
+console.log(result)
+console.log(result[sym] === test[sym])
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>运行 for...in 实现的深拷贝我们会发现：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/4/18/162d6bbd94bd9e48?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>​</p> <p>拷贝失败了，为什么？</p> <p>因为 <a href="https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FGlossary%2FSymbol" target="_blank" rel="noopener noreferrer">Symbol<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 是一种特殊的数据类型，它最大的特点便是独一无二，所以它的深拷贝就是浅拷贝。</p> <p>但如果这时我们使用 Reflect 实现的版本：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/4/18/162d6bbd8beff39b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>​</p> <p>成功了，因为 for...in 无法获得 Symbol 类型的键，而 <a href="https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FReflect%2FownKeys" target="_blank" rel="noopener noreferrer">Reflect<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 是可以获取的。</p> <p>当然，我们改造一下 for...in 实现也可以：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function deepClone(obj) {
+    if (!isObject(obj)) {
+        throw new Error('obj 不是一个对象！')
+    }
+
+    let isArray = Array.isArray(obj)
+    let cloneObj = isArray ? [] : {}
+    let symKeys = Object.getOwnPropertySymbols(obj)
+    // console.log(symKey)
+    if (symKeys.length &gt; 0) {
+        symKeys.forEach(symKey =&gt; {
+            cloneObj[symKey] =  isObject(obj[symKey]) ? deepClone(obj[symKey]) : obj[symKey]
+        })
+    }
+    for (let key in obj) {
+        cloneObj[key] = isObject(obj[key]) ? deepClone(obj[key]) : obj[key]
+    }
+
+    return cloneObj
+}
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></li> <li><p>拷贝原型上的属性</p> <p>众所周知，JS 对象是基于原型链设计的，所以当一个对象的属性查找不到时会沿着它的原型链向上查找，也就是一个非构造函数对象的 <a href="https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FWeb%2FJavaScript%2FReference%2FGlobal_Objects%2FObject%2Fproto" target="_blank" rel="noopener noreferrer"><strong>proto</strong><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a> 属性。</p> <p>我们创建一个 childTest 变量，让 result 为它的深拷贝结果，其他不变：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>let childTest = Object.create(test)
+let result = deepClone(childTest)
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>这时，我们最初提供的四种实现只有 for...in 的实现能正确拷贝，为什么呢？原因还是在<a href="https://link.juejin.im/?target=https%3A%2F%2Fdeveloper.mozilla.org%2Fzh-CN%2Fdocs%2FWeb%2FGuide%2FAPI%2FDOM%2FThe_structured_clone_algorithm%23%25E7%259B%25B8%25E5%2585%25B3%25E9%2593%25BE%25E6%258E%25A5" target="_blank" rel="noopener noreferrer">结构化克隆算法<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>里：原形链上的属性也不会被追踪以及复制。</p> <p>落在具体实现上就是：for...in 会追踪原型链上的属性，而其它三种方法(Object.keys、Reflect.ownKeys 和 JSON 方法)都不会追踪原型链上的属性：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/4/18/162d6bbd8adfc64f?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>​</p></li> <li><p>需要拷贝不可枚举的属性</p> <p>第四种情况，就是我们需要拷贝类似属性描述符，setters 以及 getters 这样不可枚举的属性，一般来说，这就需要一个额外的不可枚举的属性集合来存储它们。类似在第二种情况使用 for...in 拷贝 Symbol 类型键时： 我们给 test 变量里的 obj 和 arr 属性定义一下属性描述符：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>Object.defineProperties(test, {
+    'obj': {
+        writable: false,
+        enumerable: false,
+        configurable: false
+    },
+    'arr': {
+        get() {
+            console.log('调用了get')
+            return [1,2,3]
+        },
+        set(val) {
+            console.log('调用了set')
+        }
+    }
+})
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div><p>然后实现我们的拷贝不可枚举属性的版本：</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>function deepClone(obj, hash = new WeakMap()) {
+    if (!isObject(obj)) {
+        return obj
+    }
+    // 查表，防止循环拷贝
+    if (hash.has(obj)) return hash.get(obj)
+
+    let isArray = Array.isArray(obj)
+    // 初始化拷贝对象
+    let cloneObj = isArray ? [] : {}
+    // 哈希表设值
+    hash.set(obj, cloneObj)
+    // 获取源对象所有属性描述符
+    let allDesc = Object.getOwnPropertyDescriptors(obj)
+    // 获取源对象所有的 Symbol 类型键
+    let symKeys = Object.getOwnPropertySymbols(obj)
+    // 拷贝 Symbol 类型键对应的属性
+    if (symKeys.length &gt; 0) {
+        symKeys.forEach(symKey =&gt; {
+            cloneObj[symKey] = isObject(obj[symKey]) ? deepClone(obj[symKey], hash) : obj[symKey]
+        })
+    }
+
+    // 拷贝不可枚举属性,因为 allDesc 的 value 是浅拷贝，所以要放在前面
+    cloneObj = Object.create(
+        Object.getPrototypeOf(cloneObj),
+        allDesc
+    )
+    // 拷贝可枚举属性（包括原型链上的）
+    for (let key in obj) {
+        cloneObj[key] = isObject(obj[key]) ? deepClone(obj[key], hash) : obj[key];
+    }
+
+    return cloneObj
+}
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br></div></div><p>结果：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/4/18/162d6bbd96040dff?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>​</p></li></ol> <h3 id="结语"><a href="#结语" aria-hidden="true" class="header-anchor">#</a> 结语</h3> <ol><li>日常深拷贝，建议序列化反序列化方法。</li> <li>面试时遇见面试官搞事情，写一个能拷贝自身可枚举、自身不可枚举、自身 Symbol 类型键、原型上可枚举、原型上不可枚举、原型上的 Symol 类型键，循环引用也可以拷的深拷贝函数：</li></ol> <div class="language- line-numbers-mode"><pre class="language-text"><code>// 将之前写的 deepClone 函数封装一下
+function cloneDeep(obj) {
+    let family = {}
+    let parent = Object.getPrototypeOf(obj)
+
+    while (parent != null) {
+        family = completeAssign(deepClone(family), parent)
+        parent = Object.getPrototypeOf(parent)
+    }
+
+    // 下面这个函数会拷贝所有自有属性的属性描述符,来自于 MDN
+    // https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/assign
+    function completeAssign(target, ...sources) {
+        sources.forEach(source =&gt; {
+            let descriptors = Object.keys(source).reduce((descriptors, key) =&gt; {
+                descriptors[key] = Object.getOwnPropertyDescriptor(source, key)
+                return descriptors
+            }, {})
+
+            // Object.assign 默认也会拷贝可枚举的Symbols
+            Object.getOwnPropertySymbols(source).forEach(sym =&gt; {
+                let descriptor = Object.getOwnPropertyDescriptor(source, sym)
+                if (descriptor.enumerable) {
+                    descriptors[sym] = descriptor
+                }
+            })
+            Object.defineProperties(target, descriptors)
+        })
+        return target
+    }
+
+    return completeAssign(deepClone(obj), family)
+}
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br></div></div><ol><li><p>有特殊需求的深拷贝，建议使用 lodash 的 copyDeep 或 copyDeepWith 方法。</p> <p>最后感谢一下<a href="https://link.juejin.im/?target=https%3A%2F%2Fwww.zhihu.com%2Fquestion%2F47746441" target="_blank" rel="noopener noreferrer">知乎上关于这个问题<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>的启发，无论做什么，尽量不要把简单的事情复杂化，深拷贝能不用就不用，它面对的问题往往可以用更优雅的方式解决，比如使用一个函数来得到对象，当然面试的时候装个逼是可以的。</p></li></ol></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/14/2018, 5:13:48 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/Blog/assets/js/28.cd83fc3d.js" defer></script><script src="/Blog/assets/js/app.b624378b.js" defer></script>
+  </body>
+</html>

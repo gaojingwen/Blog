@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Vue.js最佳实践（五招让你成为Vue.js大师） | 小三胖技术栈</title>
+    <meta name="description" content="佛系前端大神">
+    <meta charset="UTF-8">
+  <link rel="icon" href="/Blog/favicon.ico">
+    
+    <link rel="preload" href="/Blog/assets/css/0.styles.9ba1bd5b.css" as="style"><link rel="preload" href="/Blog/assets/js/app.b624378b.js" as="script"><link rel="preload" href="/Blog/assets/js/49.6136b23c.js" as="script"><link rel="prefetch" href="/Blog/assets/js/25.812a025f.js"><link rel="prefetch" href="/Blog/assets/js/2.6f79cb1b.js"><link rel="prefetch" href="/Blog/assets/js/3.d16a0c2c.js"><link rel="prefetch" href="/Blog/assets/js/4.981975ce.js"><link rel="prefetch" href="/Blog/assets/js/5.22251c73.js"><link rel="prefetch" href="/Blog/assets/js/6.628e770d.js"><link rel="prefetch" href="/Blog/assets/js/7.07e2b6b4.js"><link rel="prefetch" href="/Blog/assets/js/8.2bccae8e.js"><link rel="prefetch" href="/Blog/assets/js/9.5fab895e.js"><link rel="prefetch" href="/Blog/assets/js/10.322ce4df.js"><link rel="prefetch" href="/Blog/assets/js/11.006e4719.js"><link rel="prefetch" href="/Blog/assets/js/12.3333e057.js"><link rel="prefetch" href="/Blog/assets/js/13.1af90041.js"><link rel="prefetch" href="/Blog/assets/js/14.182c46a3.js"><link rel="prefetch" href="/Blog/assets/js/15.1cbbb4a1.js"><link rel="prefetch" href="/Blog/assets/js/16.49b9f0b6.js"><link rel="prefetch" href="/Blog/assets/js/17.29b175e7.js"><link rel="prefetch" href="/Blog/assets/js/18.297427c5.js"><link rel="prefetch" href="/Blog/assets/js/19.2663f562.js"><link rel="prefetch" href="/Blog/assets/js/20.b7420290.js"><link rel="prefetch" href="/Blog/assets/js/21.d39c8908.js"><link rel="prefetch" href="/Blog/assets/js/22.f1126d66.js"><link rel="prefetch" href="/Blog/assets/js/23.4a7a29be.js"><link rel="prefetch" href="/Blog/assets/js/24.e6bca216.js"><link rel="prefetch" href="/Blog/assets/js/26.9960f054.js"><link rel="prefetch" href="/Blog/assets/js/27.fc3fad79.js"><link rel="prefetch" href="/Blog/assets/js/28.cd83fc3d.js"><link rel="prefetch" href="/Blog/assets/js/29.443e4941.js"><link rel="prefetch" href="/Blog/assets/js/30.6a8a17b9.js"><link rel="prefetch" href="/Blog/assets/js/31.8fc47db9.js"><link rel="prefetch" href="/Blog/assets/js/32.b715a23d.js"><link rel="prefetch" href="/Blog/assets/js/33.518efbd0.js"><link rel="prefetch" href="/Blog/assets/js/34.76e7b1b1.js"><link rel="prefetch" href="/Blog/assets/js/35.f8a6b00b.js"><link rel="prefetch" href="/Blog/assets/js/36.8c12af51.js"><link rel="prefetch" href="/Blog/assets/js/37.cda5ca1d.js"><link rel="prefetch" href="/Blog/assets/js/38.60935ef0.js"><link rel="prefetch" href="/Blog/assets/js/39.26c637dd.js"><link rel="prefetch" href="/Blog/assets/js/40.44a0bfa7.js"><link rel="prefetch" href="/Blog/assets/js/41.259d1527.js"><link rel="prefetch" href="/Blog/assets/js/42.ab80d836.js"><link rel="prefetch" href="/Blog/assets/js/43.0af190a7.js"><link rel="prefetch" href="/Blog/assets/js/44.093f7743.js"><link rel="prefetch" href="/Blog/assets/js/45.8c17580f.js"><link rel="prefetch" href="/Blog/assets/js/46.fd30eace.js"><link rel="prefetch" href="/Blog/assets/js/47.214dd0f8.js"><link rel="prefetch" href="/Blog/assets/js/48.d43dc2ae.js"><link rel="prefetch" href="/Blog/assets/js/50.fd4e81e2.js"><link rel="prefetch" href="/Blog/assets/js/51.9fa346c5.js"><link rel="prefetch" href="/Blog/assets/js/52.6e5d9385.js"><link rel="prefetch" href="/Blog/assets/js/53.19db09c4.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.9ba1bd5b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">小三胖技术栈</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/recondRESUME/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/Blog/recondCSS/" class="nav-link">Css</a></div><div class="nav-item"><a href="/Blog/recondJAVASCRIPT/" class="nav-link">Javascript</a></div><div class="nav-item"><a href="/Blog/recondVUE/" class="nav-link router-link-active">Vue</a></div><div class="nav-item"><a href="/Blog/recondNODE/" class="nav-link">Node</a></div><div class="nav-item"><a href="/Blog/recondES6/" class="nav-link">Es6</a></div><div class="nav-item"><a href="/Blog/recondPROJECT/" class="nav-link">projectify</a></div><div class="nav-item"><a href="/Blog/recondSUMMARY/" class="nav-link">summary</a></div><div class="nav-item"><a href="/Blog/recondFEATURE/" class="nav-link">feature</a></div><div class="nav-item"><a href="/Blog/recondGIT/" class="nav-link">git</a></div><div class="nav-item"><a href="/Blog/recondOTHER/" class="nav-link">other</a></div><div class="nav-item"><a href="https://github.com/gaojingwen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/recondRESUME/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/Blog/recondCSS/" class="nav-link">Css</a></div><div class="nav-item"><a href="/Blog/recondJAVASCRIPT/" class="nav-link">Javascript</a></div><div class="nav-item"><a href="/Blog/recondVUE/" class="nav-link router-link-active">Vue</a></div><div class="nav-item"><a href="/Blog/recondNODE/" class="nav-link">Node</a></div><div class="nav-item"><a href="/Blog/recondES6/" class="nav-link">Es6</a></div><div class="nav-item"><a href="/Blog/recondPROJECT/" class="nav-link">projectify</a></div><div class="nav-item"><a href="/Blog/recondSUMMARY/" class="nav-link">summary</a></div><div class="nav-item"><a href="/Blog/recondFEATURE/" class="nav-link">feature</a></div><div class="nav-item"><a href="/Blog/recondGIT/" class="nav-link">git</a></div><div class="nav-item"><a href="/Blog/recondOTHER/" class="nav-link">other</a></div><div class="nav-item"><a href="https://github.com/gaojingwen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Vue</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/Blog/recondVUE/" class="sidebar-link">大笨蛋</a></li><li><a href="/Blog/recondVUE/Vue.js最佳实践五招让你成为Vue.js大师.html" class="active sidebar-link">Vue.js最佳实践（五招让你成为Vue.js大师）</a></li><li><a href="/Blog/recondVUE/vue2.0 项目开发小结.html" class="sidebar-link">vue2.0 项目开发小结</a></li><li><a href="/Blog/recondVUE/一套 Vue 的单页模板：N3-admin.html" class="sidebar-link">一套 Vue 的单页模板：N3-admin</a></li><li><a href="/Blog/recondVUE/当前 GitHub 上排名前十的热门 Vue 项目.html" class="sidebar-link">当前 GitHub 上排名前十的热门 Vue 项目</a></li><li><a href="/Blog/recondVUE/手摸手教你搭建一个类Vue文档风格的技术文档.html" class="sidebar-link">VuePress 手摸手教你搭建一个类Vue文档风格的技术文档/博客</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="vue-js最佳实践（五招让你成为vue-js大师）"><a href="#vue-js最佳实践（五招让你成为vue-js大师）" aria-hidden="true" class="header-anchor">#</a> Vue.js最佳实践（五招让你成为Vue.js大师）</h1> <p>[前端大学](javascript:void(0)😉 <em>4月15日</em></p> <blockquote><p>作者：zach5078</p> <p>segmentfault.com/a/1190000014085613</p></blockquote> <p>本文面向对象是有一定Vue.js编程经验的开发者。如果有人需要Vue.js入门系列的文章可以在评论区告诉我，有空就给你们写。</p> <p>对大部分人来说，掌握Vue.js基本的几个API后就已经能够正常地开发前端网站。但如果你想更加高效地使用Vue来开发，成为Vue.js大师，那下面我要传授的这五招你一定得认真学习一下了。</p> <p><strong>第一招：化繁为简的Watchers</strong></p> <p>场景还原：</p> <blockquote><p>created(){</p> <pre><code>this.fetchPostList()
+</code></pre> <p>},</p> <p>watch: {</p> <pre><code>searchInputValue(){
+
+    this.fetchPostList()
+
+}
+</code></pre> <p>}</p></blockquote> <p>组件创建的时候我们获取一次列表，同时监听input框，每当发生变化的时候重新获取一次筛选后的列表这个场景很常见，有没有办法优化一下呢？</p> <p>招式解析：</p> <p>首先，在watchers中，可以直接使用函数的字面量名称；其次，声明immediate:true表示创建组件时立马执行一次。</p> <blockquote><p>watch: {</p> <pre><code>searchInputValue:{
+
+    handler: 'fetchPostList',
+
+    immediate: true
+
+}
+</code></pre> <p>}</p></blockquote> <p><strong>第二招：一劳永逸的组件注册</strong></p> <p>场景还原：</p> <blockquote><p>created(){</p> <pre><code>this.fetchPostList()
+</code></pre> <p>},</p> <p>watch: {</p> <pre><code>searchInputValue(){
+
+    this.fetchPostList()
+
+}
+</code></pre> <p>}</p></blockquote> <blockquote><BaseInput></BaseInput> <BaseButton><BaseIcon name="search"></BaseIcon></BaseButton></blockquote> <p>我们写了一堆基础UI组件，然后每次我们需要使用这些组件的时候，都得先import，然后声明components，很繁琐！秉持能偷懒就偷懒的原则，我们要想办法优化！</p> <p>招式解析：</p> <p>我们需要借助一下神器webpack，使用 require.context() 方法来创建自己的（模块）上下文，从而实现自动动态require组件。这个方法需要3个参数：要搜索的文件夹目录，是否还应该搜索它的子目录，以及一个匹配文件的正则表达式。</p> <p>我们在components文件夹添加一个叫global.js的文件，在这个文件里借助webpack动态将需要的基础组件统统打包进来。</p> <blockquote><p>import Vue from 'vue'</p> <p>function capitalizeFirstLetter(string) {</p> <p>return string.charAt(0).toUpperCase() + string.slice(1)</p> <p>}</p> <p>const requireComponent = require.context(</p> <p>'.', false, /.vue$/</p> <p>//找到components文件夹下以.vue命名的文件</p> <p>)</p> <p>requireComponent.keys().forEach(fileName =&gt; {</p> <p>const componentConfig = requireComponent(fileName)</p> <p>const componentName = capitalizeFirstLetter(</p> <pre><code>fileName.replace(/^\.\//, '').replace(/\.\w+$/, '')
+
+//因为得到的filename格式是: './baseButton.vue', 所以这里我们去掉头和尾，只保留真正的文件名
+</code></pre> <p>)</p> <p>Vue.component(componentName, componentConfig.default || componentConfig)</p> <p>})</p></blockquote> <p>最后我们在main.js中import 'components/global.js'，然后我们就可以随时随地使用这些基础组件，无需手动引入了。</p> <p><strong>第三招：釜底抽薪的router key</strong></p> <hr> <p>场景还原：</p> <p>下面这个场景真的是伤透了很多程序员的心…先默认大家用的是Vue-router来实现路由的控制。</p> <p>假设我们在写一个博客网站，需求是从/post-page/a，跳转到/post-page/b。然后我们惊人的发现，页面跳转后数据竟然没更新？！原因是vue-router”智能地”发现这是同一个组件，然后它就决定要复用这个组件，所以你在created函数里写的方法压根就没执行。通常的解决方案是监听$route的变化来初始化数据，如下：</p> <blockquote><p>data() {</p> <p>return {</p> <pre><code>loading: false,
+
+error: null,
+
+post: null
+</code></pre> <p>}</p> <p>},</p> <p>watch: {</p> <p>'$route': {</p> <pre><code>handler: 'resetData',
+
+immediate: true
+</code></pre> <p>}</p> <p>},</p> <p>methods: {</p> <p>resetData() {</p> <pre><code>this.loading = false
+
+this.error = null
+
+this.post = null
+
+this.getPost(this.$route.params.id)
+</code></pre> <p>},</p> <p>getPost(id){</p> <p>}</p> <p>}</p></blockquote> <p>bug是解决了，可每次这么写也太不优雅了吧？秉持着能偷懒则偷懒的原则，我们希望代码这样写：</p> <blockquote><p>data() {</p> <p>return {</p> <pre><code>loading: false,
+
+error: null,
+
+post: null
+</code></pre> <p>}</p> <p>},</p> <p>created () {</p> <p>this.getPost(this.$route.params.id)</p> <p>},</p> <p>methods () {</p> <p>getPost(postId) {</p> <pre><code>// ...
+</code></pre> <p>}</p> <p>}</p></blockquote> <p>招式解析:</p> <p>那要怎么样才能实现这样的效果呢，答案是给router-view添加一个unique的key，这样即使是公用组件，只要url变化了，就一定会重新创建这个组件。（虽然损失了一丢丢性能，但避免了无限的bug）。同时，注意我将key直接设置为路由的完整路径，一举两得。</p> <blockquote><!----></blockquote> <p><strong>第四招: 无所不能的render函数</strong></p> <p>场景还原:</p> <p>vue要求每一个组件都只能有一个根元素，当你有多个根元素时，vue就会给你报错</p> <blockquote><pre><code>v-for=&quot;route in routes&quot;
+
+:key=&quot;route.name&quot;
+</code></pre> <blockquote></blockquote> <div class="language-javascript line-numbers-mode"><pre class="language-javascript"><code><span class="token operator">&lt;</span><span class="token operator">!</span><span class="token operator">--</span> 
+<span class="token operator">&lt;</span>router<span class="token operator">-</span>link <span class="token punctuation">:</span>to<span class="token operator">=</span><span class="token string">&quot;route&quot;</span><span class="token operator">&gt;</span>
+
+  <span class="token punctuation">{</span><span class="token punctuation">{</span> route<span class="token punctuation">.</span>title <span class="token punctuation">}</span><span class="token punctuation">}</span>
+
+<span class="token operator">&lt;</span><span class="token operator">/</span>router<span class="token operator">-</span>link<span class="token operator">&gt;</span>
+<span class="token operator">--</span><span class="token operator">&gt;</span>
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div> <p>ERROR - Component template should contain exactly one root element.</p> <pre><code>If you are using v-if on multiple elements, use v-else-if
+
+to chain them instead.
+</code></pre></blockquote> <p>招式解析:</p> <p>那有没有办法化解呢，答案是有的，只不过这时候我们需要使用render()函数来创建HTML，而不是template。其实用js来生成html的好处就是极度的灵活功能强大，而且你不需要去学习使用vue的那些功能有限的指令API，比如v-for, v-if。（reactjs就完全丢弃了template）</p> <blockquote><p>functional: true,</p> <p>render(h, { props }) {</p> <p>return props.routes.map(route =&gt;</p> <pre><code>&lt;li key={route.name}&gt;
+
+  &lt;router-link to={route}&gt;
+</code></pre> <pre><code>  &lt;/router-link&gt;
+
+&lt;/li&gt;
+</code></pre> <p>)</p> <p>}</p></blockquote> <p><strong>第五招：无招胜有招的高阶组件</strong></p> <p>划重点：这一招威力无穷，请务必掌握</p> <p>当我们写组件的时候，通常我们都需要从父组件传递一系列的props到子组件，同时父组件监听子组件emit过来的一系列事件。举例子：</p> <blockquote><p>//父组件</p> =&quot;handleFocus&gt;
+ <p>//子组件</p> <label><pre><code>
+
+&lt;input
+
+  :value=&quot;value&quot;
+
+  :placeholder=&quot;placeholder&quot;
+
+  @focus=$emit('focus', $event)&quot;
+
+  @input=&quot;$emit('input', $event.target.value)&quot;
+
+&gt;
+</code></pre></label></blockquote> <p>有下面几个优化点：</p> <p>1.每一个从父组件传到子组件的props,我们都得在子组件的Props中显式的声明才能使用。这样一来，我们的子组件每次都需要申明一大堆props, 而类似placeholer这种dom原生的property我们其实完全可以直接从父传到子，无需声明。方法如下：</p> <blockquote><p>&lt;input</p> <p>:value=&quot;value&quot;</p> <p>v-bind=&quot;$attrs&quot;</p> <p>@input=&quot;$emit('input', $event.target.value)&quot;</p> <p>&gt;</p></blockquote> <p>$attrs包含了父作用域中不作为 prop 被识别 (且获取) 的特性绑定 (class 和 style 除外)。当一个组件没有声明任何 prop 时，这里会包含所有父作用域的绑定，并且可以通过 v-bind=”$attrs” 传入内部组件——在创建更高层次的组件时非常有用。</p> <p>2.注意到子组件的@focus=$emit('focus', $event)&quot;其实什么都没做，只是把event传回给父组件而已，那其实和上面类似，我完全没必要显式地申明：</p> <blockquote><p>&lt;input</p> <pre><code>:value=&quot;value&quot;
+
+v-bind=&quot;$attrs&quot;
+
+v-on=&quot;listeners&quot;
+</code></pre> <p>&gt;</p> <p>computed: {</p> <p>listeners() {</p> <pre><code>return {
+
+  ...this.$listeners,
+
+  input: event =&gt;
+
+    this.$emit('input', event.target.value)
+
+}
+</code></pre> <p>}</p> <p>}</p></blockquote> <p>$listeners包含了父作用域中的 (不含 .native 修饰器的) v-on 事件监听器。它可以通过 v-on=”$listeners” 传入内部组件——在创建更高层次的组件时非常有用。</p> <p>3.需要注意的是，由于我们input并不是BaseInput这个组件的根节点，而默认情况下父作用域的不被认作 props 的特性绑定将会“回退”且作为普通的 HTML 特性应用在子组件的根元素上。所以我们需要设置inheritAttrs:false，这些默认行为将会被去掉, 以上两点的优化才能成功。</p> <p><strong>结尾</strong></p> <hr> <p>掌握了以上五招，你就能在Vue.js的海洋中自由驰骋了，去吧少年。</p> <p>陆续可能还会更新一些别的招数，敬请期待。</p></div> <div class="page-edit"><!----> <!----></div> <!----> </div> <!----></div></div>
+    <script src="/Blog/assets/js/49.6136b23c.js" defer></script><script src="/Blog/assets/js/app.b624378b.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>从promise到async function | 小三胖技术栈</title>
+    <meta name="description" content="佛系前端大神">
+    <meta charset="UTF-8">
+  <link rel="icon" href="/Blog/favicon.ico">
+    
+    <link rel="preload" href="/Blog/assets/css/0.styles.9ba1bd5b.css" as="style"><link rel="preload" href="/Blog/assets/js/app.b624378b.js" as="script"><link rel="preload" href="/Blog/assets/js/15.1cbbb4a1.js" as="script"><link rel="prefetch" href="/Blog/assets/js/25.812a025f.js"><link rel="prefetch" href="/Blog/assets/js/2.6f79cb1b.js"><link rel="prefetch" href="/Blog/assets/js/3.d16a0c2c.js"><link rel="prefetch" href="/Blog/assets/js/4.981975ce.js"><link rel="prefetch" href="/Blog/assets/js/5.22251c73.js"><link rel="prefetch" href="/Blog/assets/js/6.628e770d.js"><link rel="prefetch" href="/Blog/assets/js/7.07e2b6b4.js"><link rel="prefetch" href="/Blog/assets/js/8.2bccae8e.js"><link rel="prefetch" href="/Blog/assets/js/9.5fab895e.js"><link rel="prefetch" href="/Blog/assets/js/10.322ce4df.js"><link rel="prefetch" href="/Blog/assets/js/11.006e4719.js"><link rel="prefetch" href="/Blog/assets/js/12.3333e057.js"><link rel="prefetch" href="/Blog/assets/js/13.1af90041.js"><link rel="prefetch" href="/Blog/assets/js/14.182c46a3.js"><link rel="prefetch" href="/Blog/assets/js/16.49b9f0b6.js"><link rel="prefetch" href="/Blog/assets/js/17.29b175e7.js"><link rel="prefetch" href="/Blog/assets/js/18.297427c5.js"><link rel="prefetch" href="/Blog/assets/js/19.2663f562.js"><link rel="prefetch" href="/Blog/assets/js/20.b7420290.js"><link rel="prefetch" href="/Blog/assets/js/21.d39c8908.js"><link rel="prefetch" href="/Blog/assets/js/22.f1126d66.js"><link rel="prefetch" href="/Blog/assets/js/23.4a7a29be.js"><link rel="prefetch" href="/Blog/assets/js/24.e6bca216.js"><link rel="prefetch" href="/Blog/assets/js/26.9960f054.js"><link rel="prefetch" href="/Blog/assets/js/27.fc3fad79.js"><link rel="prefetch" href="/Blog/assets/js/28.cd83fc3d.js"><link rel="prefetch" href="/Blog/assets/js/29.443e4941.js"><link rel="prefetch" href="/Blog/assets/js/30.6a8a17b9.js"><link rel="prefetch" href="/Blog/assets/js/31.8fc47db9.js"><link rel="prefetch" href="/Blog/assets/js/32.b715a23d.js"><link rel="prefetch" href="/Blog/assets/js/33.518efbd0.js"><link rel="prefetch" href="/Blog/assets/js/34.76e7b1b1.js"><link rel="prefetch" href="/Blog/assets/js/35.f8a6b00b.js"><link rel="prefetch" href="/Blog/assets/js/36.8c12af51.js"><link rel="prefetch" href="/Blog/assets/js/37.cda5ca1d.js"><link rel="prefetch" href="/Blog/assets/js/38.60935ef0.js"><link rel="prefetch" href="/Blog/assets/js/39.26c637dd.js"><link rel="prefetch" href="/Blog/assets/js/40.44a0bfa7.js"><link rel="prefetch" href="/Blog/assets/js/41.259d1527.js"><link rel="prefetch" href="/Blog/assets/js/42.ab80d836.js"><link rel="prefetch" href="/Blog/assets/js/43.0af190a7.js"><link rel="prefetch" href="/Blog/assets/js/44.093f7743.js"><link rel="prefetch" href="/Blog/assets/js/45.8c17580f.js"><link rel="prefetch" href="/Blog/assets/js/46.fd30eace.js"><link rel="prefetch" href="/Blog/assets/js/47.214dd0f8.js"><link rel="prefetch" href="/Blog/assets/js/48.d43dc2ae.js"><link rel="prefetch" href="/Blog/assets/js/49.6136b23c.js"><link rel="prefetch" href="/Blog/assets/js/50.fd4e81e2.js"><link rel="prefetch" href="/Blog/assets/js/51.9fa346c5.js"><link rel="prefetch" href="/Blog/assets/js/52.6e5d9385.js"><link rel="prefetch" href="/Blog/assets/js/53.19db09c4.js">
+    <link rel="stylesheet" href="/Blog/assets/css/0.styles.9ba1bd5b.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/Blog/" class="home-link router-link-active"><!----> <span class="site-name">小三胖技术栈</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/Blog/recondRESUME/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/Blog/recondCSS/" class="nav-link">Css</a></div><div class="nav-item"><a href="/Blog/recondJAVASCRIPT/" class="nav-link">Javascript</a></div><div class="nav-item"><a href="/Blog/recondVUE/" class="nav-link">Vue</a></div><div class="nav-item"><a href="/Blog/recondNODE/" class="nav-link">Node</a></div><div class="nav-item"><a href="/Blog/recondES6/" class="nav-link router-link-active">Es6</a></div><div class="nav-item"><a href="/Blog/recondPROJECT/" class="nav-link">projectify</a></div><div class="nav-item"><a href="/Blog/recondSUMMARY/" class="nav-link">summary</a></div><div class="nav-item"><a href="/Blog/recondFEATURE/" class="nav-link">feature</a></div><div class="nav-item"><a href="/Blog/recondGIT/" class="nav-link">git</a></div><div class="nav-item"><a href="/Blog/recondOTHER/" class="nav-link">other</a></div><div class="nav-item"><a href="https://github.com/gaojingwen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/Blog/recondRESUME/" class="nav-link">Resume</a></div><div class="nav-item"><a href="/Blog/recondCSS/" class="nav-link">Css</a></div><div class="nav-item"><a href="/Blog/recondJAVASCRIPT/" class="nav-link">Javascript</a></div><div class="nav-item"><a href="/Blog/recondVUE/" class="nav-link">Vue</a></div><div class="nav-item"><a href="/Blog/recondNODE/" class="nav-link">Node</a></div><div class="nav-item"><a href="/Blog/recondES6/" class="nav-link router-link-active">Es6</a></div><div class="nav-item"><a href="/Blog/recondPROJECT/" class="nav-link">projectify</a></div><div class="nav-item"><a href="/Blog/recondSUMMARY/" class="nav-link">summary</a></div><div class="nav-item"><a href="/Blog/recondFEATURE/" class="nav-link">feature</a></div><div class="nav-item"><a href="/Blog/recondGIT/" class="nav-link">git</a></div><div class="nav-item"><a href="/Blog/recondOTHER/" class="nav-link">other</a></div><div class="nav-item"><a href="https://github.com/gaojingwen" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  GitHub地址
+  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first"><p class="sidebar-heading open"><span>Es6</span> <!----></p> <ul class="sidebar-group-items"><li><a href="/Blog/recondES6/" class="sidebar-link">大笨蛋</a></li><li><a href="/Blog/recondES6/ES2018 新特征之：异步迭代器 for-await-of.html" class="sidebar-link">ES2018 新特征之：异步迭代器 for-await-of</a></li><li><a href="/Blog/recondES6/从promise到async function.html" class="active sidebar-link">从promise到async function</a><ul class="sidebar-sub-headers"><li class="sidebar-sub-header"><a href="/Blog/recondES6/从promise到async function.html#长篇预警" class="sidebar-link">长篇预警</a></li><li class="sidebar-sub-header"><a href="/Blog/recondES6/从promise到async function.html#重头戏来了-async-function" class="sidebar-link">重头戏来了,async function!</a></li></ul></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="从promise到async-function"><a href="#从promise到async-function" aria-hidden="true" class="header-anchor">#</a> 从promise到async function</h1> <p>事实上async function只不过是对Promise一个很好的封装，从es6到es7，而async异步方法确实实现起来 也可以让代码变得很优雅，下面就由浅到深具体说说其中的原理。</p> <h2 id="长篇预警"><a href="#长篇预警" aria-hidden="true" class="header-anchor">#</a> 长篇预警</h2> <p>promise是es6中实现的一个对象，它接收一个函数作为参数。这个函数又有两个参数，分别是 resolve和reject。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const a = new Promise(function(resolve, reject){
+	console.log(1)
+	resolve(3)
+	reject(5) 
+	console.log(4)
+})
+console.log('outter')
+console.log(a) 
+	    
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>结果如下：</p> <p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cb5abc1577b92?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>这里先提一个关键resolve与reject两个方法事实上对应着两个出口，是为了传递我们在方法中的参数(这里对应3和5)。不太了解也没事，下面会一直用到我这里说的概念。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>console.log(4)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>也就是说Promise对象可以从pending状态 变化为resolved状态或者是rejected状态，但是resolved状态和rejected状态之间可没办法相互转化（已经从出口出去了）</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const a = new Promise(function(resolve, reject){
+	console.log(1)
+	setTimeout( () =&gt; {
+		resolve('inner')
+	})
+})
+console.log('outter')
+console.log(a)
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cb64c6435f20e?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>对于任意一个已经成为resolved状态或者是rejected状态的promise对象（这里就是a）。我们都可以用then方法来接收。而这个then方法，它就是异步的。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const a = new Promise(function(resolve, reject){
+		console.log(1)		//1 
+		
+		resolve('inner') 
+})
+console.log('outter') //2
+
+a.then(v =&gt; {
+	console.log(v) //4
+})
+
+console.log(a) //3
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cb6d3d6ce783b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const a = new Promise(function(resolve, reject){
+	console.log(1)		
+	resolve('inner') 
+})
+
+const b = a.then(v =&gt; {
+	console.log(v) 
+})
+
+setTimeout( () =&gt; {
+	console.log(b)
+})
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cb74ec31c3eee?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>首先说明一下，所有的setTimeout（包括setInterval）都默认至少有一个4ms,就算你不写。并且setTimeout是浏览器提供的另一个线程来实现，而promise则是作为es6的规范。（如果用node就好解释了，我更倾向于认为Promise是类似于nexttick之类的接口。浏览器环境下的js并不像node具有多个队列，只有一个主线程运行队列，Promise一定会在当前主线程队列运行完毕的最后一个）。不了解的node也无所谓，这里只需要记住promise一定比setTimeout快！setTimeout有4ms呢！言归正传，实质上这里是帮我们返回了一个已经是resolved状态的Promise（具体规则见mdn），并且因为我们并没有传递参数，因此这里接收到的参数就是undefined。接着看代码</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const a = new Promise(function(resolve, reject){		
+	resolve('inner') 
+})
+
+const b = a.then(v =&gt; {
+	return new Promise((resolve, reject) =&gt; {
+	    resolve(v)
+	})
+})
+
+setTimeout( () =&gt; {
+	console.log(b)
+},1000)
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cb77c2700f598?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>a.then(v =&gt; {
+	return new Promise((resolve, reject) =&gt; {
+		resolve(v)
+	})
+}).then(v =&gt; {
+
+}).then(v =&gt;{
+
+})
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>哎哟，then一多，好丑啊。代码一点也不优雅，是的。这确实是个问题，这才引出了async的解决方案，但还不到谈那个的时间。让我们先把promise说完。
+      可能有小伙伴发现了，reject你一直都没说呢？是的，先说完resolve再说这个，其实我个人理解rejcet为抛出一个异常，我们可以在then中去处理，但是我们也可以在catch中处理（我推荐这种，至于为什么，我把两种写法列出来你就明白了）。
+     现在假设有一个业务逻辑，需要判断之后我们再决定走哪个出口。下面第一种是用then的</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const a = new Promise(function(resolve, reject){	
+	if(0)	{
+		resolve('成功了') 
+	} else {
+		reject('错误了')
+	}			
+})
+
+
+a.then( v =&gt; {
+	console.log(v)
+	return new Promise((resolve, reject) =&gt; {
+		resolve(v)
+	})
+}, e =&gt; {
+	console.log(e)
+})
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cb85826104222?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <div class="language- line-numbers-mode"><pre class="language-text"><code>a.then( v =&gt; {
+	console.log(v)
+	return new Promise((resolve, reject) =&gt; {
+		resolve(v)
+	})
+}).catch(e =&gt; {
+	console.log(e)
+})
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><p>结果图如上，我就不贴了。是不是很优雅？（额。。。。单纯指的是相对then来说。）
+     总而言之，resolve，reject。对应两种状态，两种出口，出口中传递参数。出口之前都为同步。出口之后,then,catch都是异步，并且我们可以在then和catch中接收之前同步的传出来的参数。并且要注意的是resolve状态和reject两种出口我们要用不同的方式来接收。一种我认为是成功，一种是异常，异常必须要去捕获。
+     说到这里其实promise也差不多了，再提两个方法，一个是Promise.race，一个是Promise.all。注意了，这两个都是类方法。Promise.race方法是将多个 Promise 实例，包装成一个新的 Promise 实例。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const result = Promise.race([a, b, c]);
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br></div></div><p>a,b,c都是promise的实例，这三个实例哪一个先结束，就先返回一个。result就变成哪一个。举个场景就明白了。现在我们需要一张图片，这个图片异步加载，但是它是哪张我不关心（只要是给定的三张中的一张），我定了三个异步任务，先返回的那张我放到html上。嗯，就这么简单。但是要注意，如果第一个结束的是错误的，一样也是算作跑最快的那个，返回给result。因此外面应该用catch接收一下，同时自行判断逻辑（可能因为网络的原因需要我们再执行一遍啦还是啥）
+     Promise.all。他必须要接收的promise实例全部变为resolve才返回（返回这些promise实例中resolve中的参数组成的数组），有一个变成reject，它就返回这个reject的参数。直接举例子。我们需要异步加载三张图片，但是我必须要三张全部加载完我一起显示，我不要一张一张的出来。三张都出来就是resolve，任意一张失败了不好意思我就都不给你显示。
+     剩下的还有一些promise方法我就不多说了，用的也不多，直接看文档就好了。</p> <h2 id="重头戏来了-async-function"><a href="#重头戏来了-async-function" aria-hidden="true" class="header-anchor">#</a> 重头戏来了,async function!</h2> <p>实际上，async function的使用方法跟普通函数一模一样，如果你在async function中没有使用await关键字 的话，从某种程度上来说它就是普通函数。。。。先来个代码压压惊。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function test() {
+	console.log(1)
+	const a = await new Promise(function(resolve, reject){
+		resolve(3)
+	})
+	console.log(a)
+}
+
+test()
+console.log(2)
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cba2b4c21b070?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>还是一样，代码说话</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function test() {
+	console.log(1)
+	const a = await new Promise(function(resolve, reject){
+		resolve(3)
+	})
+	console.log('我是被处理后的：', a)
+}
+
+const b = test()
+console.log('我是还没被处理后的：', b)
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cba8be1bd0753?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>async function只是把我们这一整个函数用promise包装了一下</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>resolve(3)
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br></div></div><p>是不是异步极其优雅的实现方法!!!</p> <p>有的同学就问了，那么await只能处理promise对象吗，不是的。见代码</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function test() {
+	console.log(1)
+	const b = await '我常常因为自己不够优秀而感到恐慌'
+	console.log(b)
+	const a = await new Promise(function(resolve, reject){
+		resolve(3)
+	})
+	console.log('我是被处理后的：', a)
+}
+
+const b = test()
+console.log('我是还没被处理后的：', b)
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cbb23f0d34a6b?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>无敌</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function test() {
+	const a = await new Promise(function(resolve, reject){
+		reject(3)
+	})	
+}
+test()
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cbb6bb3ed5e6a?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>报错了。。咋办呢。。。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>async function test() {
+	try {
+		const a = await new Promise(function(resolve, reject){
+			reject('完蛋，我会被捕获')
+		})		
+	} catch(e) {
+		console.log(e)
+	}
+
+}
+test()
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><img src="https://user-gold-cdn.xitu.io/2018/7/24/164cbb7ec68dca78?imageView2/0/w/1280/h/960/format/webp/ignore-error/1" alt="img"></p> <p>很好，下面来个再度进阶的，也是我个人之前遇到的一个坑。场景是这样的，我做了一个非常简单的爬虫(puppeteer)，主要就是爬取图片然后下载到本地。 场景中有这样一段代码。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>	srcs.forEach( async(src) =&gt; {
+		await srcImages(srcs[i], config.cat)
+		console.log(1)
+		page.waitfor(200)
+	})
+	async srcImages(){conole.log(2)//balabalabalabala具体逻辑就略过了} 
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>大概意思就是我爬取了每个图片的网址，放在一个数组里，然后对数组里面每个地址都调用一个函数，这个函数负责下载。并且这个函数就是用async包裹的，（还记得async就是把一整个函数用Promise包裹吗），然后每一次下载完我都等待200ms，避免操作太频繁把我IP封了。问题来了，小伙伴猜猜输出？？？？
+     结果证明，我一开始的想法完全错误，这些1是连续打出来的。嘿嘿嘿，为什么会这样呢？我来捋一捋，我们一开始对数组第一项进行操作，遇到了第一个await，很好，后面代码全部异步等待。<strong>关键来了</strong>,主线任务接着运行，开始操作数组的第二项。。。。。就这样，把数组全部遍历完毕之后，我们再全部一起下载（之前都全部挂在异步等待同步的主线程运行结束呢）。。。。。全部下载完后，我们打印所有的2。。。。然后我们再我们打印所有的1。。。我们再等待200ms * 数组长度的时间。。 。饿。。。坑人。。。那么我最后是怎么解决的？</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>		async function test() {
+			for(let i = 0; i &lt; srcs.length; i++) {
+				await srcImages(srcs[i], config.cat)
+				await page.waitfor(200)
+			}
+		}
+		test()
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><p>嘿嘿嘿，还是用for循环来代替forEach好一些。这里也给我提了个警钟，当传统的那些forEach,map之流遇到async的时候，还是应该注意一下的，可能会跟预想的逻辑不一样哦。</p> <p>在这篇文章之后，后续的文章我应该都只会发到自己的<a href="https://link.juejin.im/?target=https%3A%2F%2Fcyboning.github.io%2F" target="_blank" rel="noopener noreferrer">博客<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg></a>上。每次发的时候应该都会在掘金沸点更新一下。但如果文章较长的话我应该也会先在掘金上更新一下（毕竟图片多了的话。掘金上外链直接生成，而不是存在本地）。</p> <p>好了，到这里也就结束了。不了解node的小伙伴们可以撤了。下面贴一个在node中自己实现的promisify方法。</p> <div class="language- line-numbers-mode"><pre class="language-text"><code>const fs = require('fs');
+    
+function promisify(f) {
+	return function() { //虽然这里函数没参数，但运行时肯定会有参数哦
+		let args = Array.prototype.slice.call(arguments)
+		return new Promise((resolve,reject) =&gt; {
+			args.push((err, result) =&gt; {
+				if(err) {
+					reject(err)
+				} else {
+					resolve(result)
+				}
+			})
+			f.apply(null, args)
+		})
+	}
+}
+  readFile = promisify(fs.readFile);
+  
+ //基础版
+ readFile('./app.js').then( data =&gt; {
+ 	console.log(data.toString())
+ }).catch(e =&gt; {
+ 	console.log(e)
+ })
+ 
+//进阶版！ 使用async await
+async funtion test() {
+    try {
+        const content = await readFile('./app.js')
+        console.log(content)
+    } catch(e) {
+            
+    }
+}    
+
+复制代码
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><p>回调地狱问题在node中非常明显，而我们通过promisify可以将一个函数转化为Promise对象。node中任何一个函数的最后一个回调函数一定是<code>(err, data) =&gt; {}</code>。因此这里我们就把其作为数组的最后一项。如果err我们就从reject出口 出去，如果成功就从resolve出口出去。而第一步promisify则是有点像是函数柯里化，返回一个函数地址。好了文章到这里就结束了。</p></div> <div class="page-edit"><!----> <div class="last-updated"><span class="prefix">Last Updated: </span> <span class="time">9/14/2018, 5:13:48 PM</span></div></div> <!----> </div> <!----></div></div>
+    <script src="/Blog/assets/js/15.1cbbb4a1.js" defer></script><script src="/Blog/assets/js/app.b624378b.js" defer></script>
+  </body>
+</html>
